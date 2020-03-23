@@ -1,3 +1,3 @@
 ---
-title_en: Product 1
+title_en: Product 2
 ---
