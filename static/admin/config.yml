@@ -8,14 +8,151 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "product" # Used in routes, e.g., /admin/collections/blog
-    label: "Product" # Used in the UI
-    folder: "data/products" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Order", name: "order", widget: "number"}
-      - {label: "Description", name: "description", widget: "markdown"}
-      - {label: "Background Image", name: "bg_image", widget: "image"}
-      - {label: "Background Title", name: "bg_title", widget: "string"}
+  - name: "product"
+    label: "產品 Products"
+    folder: "data/products"
+    create: true
+    identifier_field: "title.en"
+    slug: "{{fields.title.en}}"
+    fields:
+      - label: "標題 Title"
+        name: "title"
+        widget: object
+        fields:
+          - label: "English"
+            name: "en"
+            widget: string
+          - label: "日本語"
+            name: "ja"
+            widget: string
+            required: false
+          - label: "繁體中文"
+            name: "tc"
+            widget: string
+            required: false
+      - label: "內文 Description"
+        name: "description"
+        widget: object
+        required: false
+        fields:
+          - label: "English"
+            name: "en"
+            widget: markdown
+          - label: "日本語"
+            name: "ja"
+            widget: markdown
+          - label: "繁體中文"
+            name: "tc"
+            widget: markdown
+      - label: "背景圖片 Background Image"
+        name: "bg_image"
+        widget: "image"
+        required: false
+      - label: "背景圖片標題 Background Title"
+        name: "bg_title"
+        widget: object
+        required: false
+        fields:
+          - label: "English"
+            name: "en"
+            widget: string
+          - label: "日本語"
+            name: "ja"
+            widget: string
+          - label: "繁體中文"
+            name: "tc"
+            widget: string
+  - name: "pages"
+    label: "頁面 Pages"
+    files:
+      - label: "產品頁面 Product Page"
+        name: "product_page"
+        file: "data/products.yml"
+        fields:
+          - label: "選單名稱 Menu Title"
+            name: "menu_title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
+          - label: "標題 Title"
+            name: "title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
+          - label: "證言 Testimonials"
+            label_singular: "證言 Testimonial"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - label: "引述 Quote"
+                name: "quote"
+                widget: object
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "講者 Author"
+                name: author
+                widget: object
+                fields:
+                  - label: "名字 Name"
+                    name: "name"
+                    widget: object
+                    fields:
+                      - label: "English"
+                        name: "en"
+                        widget: string
+                      - label: "日本語"
+                        name: "ja"
+                        widget: string
+                      - label: "繁體中文"
+                        name: "tc"
+                        widget: string
+                  - label: "職位 Position"
+                    name: "position"
+                    widget: object
+                    fields:
+                      - label: "English"
+                        name: "en"
+                        widget: string
+                      - label: "日本語"
+                        name: "ja"
+                        widget: string
+                      - label: "繁體中文"
+                        name: "tc"
+                        widget: string
+          - label: "產品列表項目 Product List Items"
+            label_singular: "產品列表項目 Product List Item"
+            name: "list_items"
+            widget: "list"
+            field:
+              - label: "產品 Products"
+                label_singular: "產品 Product"
+                name: "product"
+                widget: "relation"
+                collection: "product"
+                valueField: "title.en"
+                searchFields: ["title.en", "title.ja", "title.tc"]
+                displayFields: "title.en"
