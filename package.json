@@ -17,6 +17,8 @@
     "gatsby": "^2.19.45",
     "gatsby-plugin-netlify-cms": "^4.2.1",
     "gatsby-plugin-sass": "^2.2.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
     "netlify-cms-app": "^2.11.32",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
