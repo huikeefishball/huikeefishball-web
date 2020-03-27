@@ -3,7 +3,7 @@ const path = require(`path`)
 const { languages } = require('../locales')
 const { localizeURL } = require('../utils/localization')
 
-module.exports = async (createPage, graphql) => {
+module.exports = async (createPage, graphql, pageData) => {
   const result = await graphql(`
     {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/products/" } }) {
@@ -37,12 +37,22 @@ module.exports = async (createPage, graphql) => {
     code: language,
   }) =>{
     const pagePath = "/products"
+    const {
+      title: { [language]: pageTitle },
+      quote: {
+        content: { [language]: quoteContent },
+        author: { [language]: quoteAuthor },
+      }
+    } = pageData
     createPage({
       path: localizeURL(language, pagePath),
       component: path.resolve(`src/templates/products.js`),
       context: {
         language,
         pagePath,
+        pageTitle,
+        quoteContent,
+        quoteAuthor,
         products: result.data.allMarkdownRemark.edges.map(edge => {
           const {
             id,

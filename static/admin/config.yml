@@ -69,7 +69,7 @@ collections:
     files:
       - label: "產品頁面 Products Page"
         name: "products_page"
-        file: "data/products.yml"
+        file: "data/products_page.yml"
         fields:
           - label: "選單名稱 Menu Title"
             name: "menu_title"
@@ -129,6 +129,20 @@ collections:
                   - label: "繁體中文"
                     name: "tc"
                     widget: string
+          - label: "描述 Description"
+            name: "description"
+            widget: object
+            required: false
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
           - label: "產品列表項目 Product List Items"
             label_singular: "產品列表項目 Product List Item"
             name: "list_items"

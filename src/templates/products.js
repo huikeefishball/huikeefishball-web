@@ -7,6 +7,9 @@ const ProductsPage = (props) => {
   const {
     language,
     pagePath,
+    pageTitle,
+    quoteAuthor,
+    quoteContent,
     products,
   } = props.pageContext
   return (
@@ -14,7 +17,11 @@ const ProductsPage = (props) => {
       language={language}
       pagePath={pagePath}
     >
-      <h1>Products [{language}]</h1>
+      <h1>{pageTitle}</h1>
+      <div>
+        <p>{quoteContent}</p>
+        <p>{quoteAuthor}</p>
+      </div>
       <ul>
         {products.map(product => (
           <ProductListItem
