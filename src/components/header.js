@@ -1,25 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Header = () => {
+import LanguageSwitcher from "./language-switcher"
+
+import { localizeURL } from "../utils/localization"
+
+const Header = (props) => {
+  const {
+    language,
+    pagePath,
+  } = props
+
   return (
     <header>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to={localizeURL(language, "/")}>Home</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to={localizeURL(language, "/products")}>Products</Link>
           </li>
           <li>
-            <Link to="/shops">Shops</Link>
+            <Link to={localizeURL(language, "/shops")}>Shops</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to={localizeURL(language, "/contact")}>Contact</Link>
           </li>
         </ul>
       </nav>
+      <LanguageSwitcher
+        language={language}
+        pagePath={pagePath}
+      />
     </header>
   )
 }

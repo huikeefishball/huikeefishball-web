@@ -1,8 +1,17 @@
 module.exports = {
   defaultLanguageKey: 'tc',
   languages: [
-    'en',
-    'ja',
-    'tc',
+    {
+      code: "en",
+      name: "ENG",
+    },
+    {
+      code: "tc",
+      name: "中文"
+    },
+    {
+      code: "ja",
+      name: "日本語",
+    },
   ],
 }

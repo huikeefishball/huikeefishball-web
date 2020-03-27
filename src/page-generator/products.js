@@ -1,6 +1,6 @@
 const path = require(`path`)
 
-const { languages, defaultLanguageKey } = require('../locales')
+const { languages } = require('../locales')
 const { localizeURL } = require('../utils/localization')
 
 module.exports = async (createPage, graphql) => {
@@ -33,12 +33,16 @@ module.exports = async (createPage, graphql) => {
       }
     }
   `)
-  languages.forEach(language =>{
+  languages.forEach(({ 
+    code: language,
+  }) =>{
+    const pagePath = "/products"
     createPage({
-      path: localizeURL(language, defaultLanguageKey, '/products'),
+      path: localizeURL(language, pagePath),
       component: path.resolve(`src/templates/products.js`),
       context: {
         language,
+        pagePath,
         products: result.data.allMarkdownRemark.edges.map(edge => {
           const {
             id,

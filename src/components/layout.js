@@ -5,11 +5,19 @@ import Footer from "./footer"
 
 import "../styles/index.scss"
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
+  const {
+    children,
+    language,
+    pagePath,
+  } = props 
   return (
     <div>
       <div>
-        <Header />
+        <Header
+          language={language}
+          pagePath={pagePath}
+        />
         {children}
       </div>
       <Footer />
