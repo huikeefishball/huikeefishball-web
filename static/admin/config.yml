@@ -67,8 +67,8 @@ collections:
   - name: "pages"
     label: "頁面 Pages"
     files:
-      - label: "產品頁面 Product Page"
-        name: "product_page"
+      - label: "產品頁面 Products Page"
+        name: "products_page"
         file: "data/products.yml"
         fields:
           - label: "選單名稱 Menu Title"
@@ -97,14 +97,14 @@ collections:
               - label: "繁體中文"
                 name: "tc"
                 widget: string
-          - label: "證言 Testimonials"
-            label_singular: "證言 Testimonial"
-            name: "testimonials"
-            widget: "list"
+          - label: "引述 Quote"
+            name: "quote"
+            widget: "object"
             fields:
-              - label: "引述 Quote"
-                name: "quote"
+              - label: "內容 Content"
+                name: "content"
                 widget: object
+                required: false
                 fields:
                   - label: "English"
                     name: "en"
@@ -118,33 +118,17 @@ collections:
               - label: "講者 Author"
                 name: author
                 widget: object
+                required: false
                 fields:
-                  - label: "名字 Name"
-                    name: "name"
-                    widget: object
-                    fields:
-                      - label: "English"
-                        name: "en"
-                        widget: string
-                      - label: "日本語"
-                        name: "ja"
-                        widget: string
-                      - label: "繁體中文"
-                        name: "tc"
-                        widget: string
-                  - label: "職位 Position"
-                    name: "position"
-                    widget: object
-                    fields:
-                      - label: "English"
-                        name: "en"
-                        widget: string
-                      - label: "日本語"
-                        name: "ja"
-                        widget: string
-                      - label: "繁體中文"
-                        name: "tc"
-                        widget: string
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
           - label: "產品列表項目 Product List Items"
             label_singular: "產品列表項目 Product List Item"
             name: "list_items"
@@ -154,7 +138,7 @@ collections:
                 label_singular: "產品 Product"
                 name: "product"
                 widget: "relation"
-                collection: "product"
-                valueField: "title.en"
+                collection: "products"
+                valueField: "id"
                 searchFields: ["title.en", "title.ja", "title.tc"]
-                displayFields: "title.en"
+                displayFields: "title.tc"
