@@ -8,11 +8,11 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "product"
+  - name: "products"
     label: "產品 Products"
     folder: "data/products"
     create: true
-    identifier_field: "title.en"
+    identifier_field: "title.tc"
     slug: "{{fields.id}}"
     fields:
       - label: "ID"
@@ -69,7 +69,7 @@ collections:
     files:
       - label: "產品頁面 Products Page"
         name: "products_page"
-        file: "data/products.yml"
+        file: "data/products_page.yml"
         fields:
           - label: "選單名稱 Menu Title"
             name: "menu_title"
@@ -129,16 +129,30 @@ collections:
                   - label: "繁體中文"
                     name: "tc"
                     widget: string
+          - label: "描述 Description"
+            name: "description"
+            widget: object
+            required: false
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
           - label: "產品列表項目 Product List Items"
             label_singular: "產品列表項目 Product List Item"
             name: "list_items"
             widget: "list"
-            field:
+            fields:
               - label: "產品 Products"
                 label_singular: "產品 Product"
-                name: "product"
+                name: "id"
                 widget: "relation"
                 collection: "products"
                 valueField: "id"
-                searchFields: ["title.en", "title.ja", "title.tc"]
-                displayFields: "title.tc"
+                searchFields: ["id", "title.en", "title.ja", "title.tc"]
+                displayFields: ["title.tc", "title.en"]

@@ -1,0 +1,30 @@
+menu_title:
+  en: Products
+  ja: 產品
+  tc: 產品
+title:
+  en: Our products
+  ja: 我們的產品
+  tc: 我們的產品
+quote:
+  content:
+    ja: 「在推出新產品前，所有同事都要參與試食投票， 做出大家都喜歡的食品才會生產」
+    tc: 「在推出新產品前，所有同事都要參與試食投票， 做出大家都喜歡的食品才會生產」
+    en: >-
+      “Before we launch a new product, all of us must try and give our golden
+      vote for it to pass, each of us must love it before we start producing it”
+  author:
+    tc: 'Rain Chan, 助理總經理'
+    ja: 'Rain Chan, 助理總經理'
+    en: 'Rain Chan, Assistant General Manager'
+description:
+  en: >-
+    Our R&D team is constantly cooking up new ideas and expanding our product
+    range. We are always open to new ideas and possibilities.
+  ja: 研發團體亦不時推出新創意來擴闊每個系列，我們樂意嘗試任何有趣的主意和可能性。
+  tc: 研發團體亦不時推出新創意來擴闊每個系列，我們樂意嘗試任何有趣的主意和可能性。
+list_items:
+  - id: traditional
+  - id: sustainable-eco
+  - id: beef
+  - id: cuttlefish
