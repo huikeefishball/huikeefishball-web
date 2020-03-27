@@ -14,7 +14,7 @@ const ProductsPage = (props) => {
       language={language}
       pagePath={pagePath}
     >
-      <h1>Products</h1>
+      <h1>Products [{language}]</h1>
       <ul>
         {products.map(product => (
           <ProductListItem
