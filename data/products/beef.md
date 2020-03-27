@@ -1,4 +1,5 @@
 ---
+id: beef
 title:
   en: Beef Range
   ja: 牛肉系列

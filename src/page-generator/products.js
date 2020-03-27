@@ -10,6 +10,7 @@ module.exports = async (createPage, graphql) => {
         edges {
           node {
             frontmatter {
+              id
               title {
                 en
                 ja
@@ -40,12 +41,14 @@ module.exports = async (createPage, graphql) => {
         language,
         products: result.data.allMarkdownRemark.edges.map(edge => {
           const {
+            id,
             title: { [language]: title },
             description: { [language]: description },
             bg_image: bgImage,
             bg_title: { [language]: bgTitle },
           } = edge.node.frontmatter
           return {
+            id,
             title,
             description,
             bgImage,

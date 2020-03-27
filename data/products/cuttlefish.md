@@ -1,4 +1,5 @@
 ---
+id: cuttlefish
 title:
   en: Cuttlefish Range
   ja: 墨魚系列

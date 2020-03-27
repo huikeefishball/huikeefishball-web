@@ -13,11 +13,15 @@ collections:
     folder: "data/products"
     create: true
     identifier_field: "title.en"
-    slug: "{{fields.title.en}}"
+    slug: "{{fields.id}}"
     fields:
+      - label: "ID"
+        name: "id"
+        widget: string
       - label: "標題 Title"
         name: "title"
         widget: object
+        required: false
         fields:
           - label: "English"
             name: "en"
@@ -25,11 +29,9 @@ collections:
           - label: "日本語"
             name: "ja"
             widget: string
-            required: false
           - label: "繁體中文"
             name: "tc"
             widget: string
-            required: false
       - label: "內文 Description"
         name: "description"
         widget: object

@@ -1,4 +1,5 @@
 ---
+id: sustainable-eco
 title:
   en: Sustainable Eco Range
   ja: 環保鱈魚系列

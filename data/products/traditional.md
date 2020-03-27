@@ -1,4 +1,5 @@
 ---
+id: traditional
 title:
   en: Traditional Range
   ja: 傳統系列

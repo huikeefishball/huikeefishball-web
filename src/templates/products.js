@@ -9,7 +9,12 @@ const ProductsPage = (props) => {
     <Layout>
       <h1>Products</h1>
       <ul>
-        {products.map(product => <ProductListItem {...product} />)}
+        {products.map(product => (
+          <ProductListItem
+            key={product.id}
+            {...product}
+          />
+        ))}
       </ul>
     </Layout>
   )
