@@ -262,7 +262,7 @@ collections:
                   - label: "繁體中文"
                     name: "tc"
                     widget: string
-              - label: "按扭文字 Button Text"
+              - label: "按鈕文字 Button Text"
                 name: "button_text"
                 widget: object
                 fields:
@@ -275,3 +275,7 @@ collections:
                   - label: "繁體中文"
                     name: "tc"
                     widget: string
+              - label: "按鈕連結 Button Link"
+                name: "button_link"
+                widget: string
+

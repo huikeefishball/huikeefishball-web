@@ -1,0 +1,69 @@
+menu_title:
+  ja: 店鋪
+  en: Shops
+  tc: 店鋪
+title:
+  ja: 我們的店鋪
+  tc: 我們的店鋪
+  en: our shops
+list_items:
+  - name:
+      ja: 長沙灣1號店
+      tc: 長沙灣1號店
+      en: Cheung Sha Wan
+    address:
+      en: 'G/F 16 Cheung Fat Street, Cheung Sha Wan '
+      ja: 長沙灣長發街16號地下
+      tc: 長沙灣長發街16號地下
+    location: '{"type":"Point","coordinates":[114.1544408,22.3387625]}'
+    phone: +852 2386 7049
+    opening_hours: '8:30am - 7:30pm'
+  - name:
+      en: Cheung Sha Wan
+      ja: 長沙灣2號店
+      tc: 長沙灣2號店
+    address:
+      ja: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+      tc: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+      en: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+    location: '{"type":"Point","coordinates":[114.1559502,22.3392924]}'
+    phone: +852 3709 6220
+    opening_hours: '9:30am - 7:30pm'
+  - name:
+      en: North Point
+      ja: 北角店
+      tc: 北角店
+    address:
+      ja: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
+      tc: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
+      en: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
+    location: '{"type":"Point","coordinates":[114.1979943,22.2913575]}'
+    phone: +852 2386 7689
+    opening_hours: '9:00am - 7:00pm'
+  - name:
+      en: West Point
+      ja: 西環店
+      tc: 西環店
+    address:
+      ja: 'G/F 5 Holland Street, Kennedy Town, Sai Wan'
+      tc: 'G/F 5 Holland Street, Kennedy Town, Sai Wan'
+      en: 'G/F 5 Holland Street, Kennedy Town, Sai Wan'
+    location: '{"type":"Point","coordinates":[114.099761,22.3673395]}'
+    phone: +852 2819 7908
+    opening_hours: '9:30am - 7:30pm'
+other_retails_stores:
+  title:
+    ja: 超市 及 銷售點
+    tc: 超市 及 銷售點
+    en: Supermarket and Roadshows
+  description:
+    en: >-
+      Our supermarker and roadshow selling points updates from time to time.
+      Please click read more get more information.
+    ja: 我們的超級標記和路演賣點會不時更新。  請點擊閱讀更多以獲取更多信息。
+    tc: 我們的超級標記和路演賣點會不時更新。  請點擊閱讀更多以獲取更多信息。
+  button_text:
+    en: Read More
+    ja: 了解更多
+    tc: 了解更多
+  button_link: https://www.facebook.com/Mad-For-%E8%A8%B1%E8%A8%98%E9%AD%9A%E6%97%A6-289680295183495/
