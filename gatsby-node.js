@@ -19,9 +19,10 @@ exports.createPages = async (gatsby) => {
     acc[key] = yaml.safeLoad(fs.readFileSync(path.resolve(`data/${key}_page.yml`), "utf-8"))
     return acc
   }, {})
-  
+
   const commonData = {
-    siteMenu: pageOrder.map(key => {
+    ...yaml.safeLoad(fs.readFileSync(path.resolve("data/common.yml"), "utf-8")),
+    site_menu: pageOrder.map(key => {
       const {
         path: pagePath,
         menu_title: title,

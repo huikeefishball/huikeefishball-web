@@ -4,10 +4,6 @@ import Layout from "../components/layout"
 
 const HomePage = (props) => {
   const {
-    language,
-    siteMenu,
-    pagePath,
-    pageTitle,
     slides,
     aboutUsTitle,
     aboutUsContent,
@@ -22,19 +18,16 @@ const HomePage = (props) => {
     teamContent,
     teamQuoteContent,
     teamQuoteAuthor,
+    ...restProps
   } = props.pageContext
   return (
-    <Layout
-      language={language}
-      pagePath={pagePath}
-      siteMenu={siteMenu}
-    >
+    <Layout {...restProps}>
       <section id="slideshow">
         {slides.map(({ image: slide }) => (
           <img
             key={slide}
             src={slide}
-            alt={pageTitle}
+            alt={restProps.pageTitle}
             role="presentation"
           />
         ))}

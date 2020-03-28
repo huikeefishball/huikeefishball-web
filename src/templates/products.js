@@ -5,22 +5,15 @@ import ProductListItem from "../components/product-list-item"
 
 const ProductsPage = (props) => {
   const {
-    language,
-    siteMenu,
-    pagePath,
-    pageTitle,
     pageDesciption,
     quoteAuthor,
     quoteContent,
     products,
+    ...restProps
   } = props.pageContext
   return (
-    <Layout
-      language={language}
-      pagePath={pagePath}
-      siteMenu={siteMenu}
-    >
-      <h1>{pageTitle}</h1>
+    <Layout {...restProps}>
+      <h1>{restProps.pageTitle}</h1>
       <div>
         <div>
           <p>{quoteContent}</p>

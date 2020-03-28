@@ -4,24 +4,17 @@ import Layout from "../components/layout"
 
 const ShopsPage = (props) => {
   const {
-    language,
-    siteMenu,
-    pagePath,
-    pageTitle,
     shops,
     otherRetailsStoresTitle,
     otherRetailsStoresDescription,
     otherRetailsStoresButtonText,
     otherRetailsStoresButtonLink,
+    ...restProps
   } = props.pageContext
   return (
-    <Layout
-      language={language}
-      pagePath={pagePath}
-      siteMenu={siteMenu}
-    >
+    <Layout {...restProps}>
       <section>
-        <h2>{pageTitle}</h2>
+        <h2>{restProps.pageTitle}</h2>
         <ul>
           {shops.map(shop => (
             <li key={shop.name}>

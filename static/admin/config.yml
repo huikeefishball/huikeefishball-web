@@ -71,6 +71,23 @@ collections:
     editor:
       preview: false
     files:
+      - label: "所有頁面 All Pages"
+        name: "all_page"
+        file: "data/common.yml"
+        fields:
+          - label: "網頁名稱 Site Title"
+            name: "site_title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
       - label: "首面 Home Page"
         name: "home_page"
         file: "data/home_page.yml"

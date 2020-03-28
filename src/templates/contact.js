@@ -4,10 +4,6 @@ import Layout from "../components/layout"
 
 const ContactPage = (props) => {
   const {
-    language,
-    siteMenu,
-    pagePath,
-    pageTitle,
     contactUsTitle,
     contactUsSubtitle,
     contactUsAddress,
@@ -17,15 +13,12 @@ const ContactPage = (props) => {
     joinUsSubtitle,
     joinUsPhone,
     joinUsEmail,
+    ...restProps
   } = props.pageContext
   return (
-    <Layout
-      language={language}
-      pagePath={pagePath}
-      siteMenu={siteMenu}
-    >
+    <Layout {...restProps}>
       <section>
-        <h1>{pageTitle}</h1>
+        <h1>{restProps.pageTitle}</h1>
         <h2>{contactUsTitle}</h2>
         <h3>{contactUsSubtitle}</h3>
         <ul>

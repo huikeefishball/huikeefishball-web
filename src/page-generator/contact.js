@@ -10,8 +10,12 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
   const pagePath = pageData.path
   languages.forEach(({ 
     code: language,
-  }) =>{
-    const siteMenu = localizeMenu(language, commonData.siteMenu)
+  }) => {
+    const {
+      site_title: { [language]: siteTitle },
+      site_menu,
+    } = commonData
+    const siteMenu = localizeMenu(language, site_menu)
     const {
       title: { [language]: pageTitle },
       contact_us: {
@@ -34,6 +38,7 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
       context: {
         language,
         siteMenu,
+        siteTitle,
         pagePath,
         pageTitle,
         contactUsTitle,
