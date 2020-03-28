@@ -1,23 +1,8 @@
-const path = require(`path`)
+const { createLocalizedPage } = require("./helper")
 
-const { languages } = require('../locales')
-const {
-  localizeURL,
-  localizeMenu,
-} = require('../utils/localization')
-
-module.exports = async ({ gatsby, commonData, pageData }) => {
-  const pagePath = pageData.path
-  languages.forEach(({ 
-    code: language,
-  }) =>{
+module.exports = async (params) => {
+  await createLocalizedPage(params, (language) => {
     const {
-      site_title: { [language]: siteTitle },
-      site_menu,
-    } = commonData
-    const siteMenu = localizeMenu(language, site_menu)
-    const {
-      title: { [language]: pageTitle },
       other_retails_stores: {
         title: { [language]: otherRetailsStoresTitle },
         description: { [language]: otherRetailsStoresDescription },
@@ -25,16 +10,9 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
         button_link: otherRetailsStoresButtonLink,
       },
       list_items,
-    } = pageData
-    gatsby.actions.createPage({
-      path: localizeURL(language, pagePath),
-      component: path.resolve(`src/templates/shops.js`),
+    } = params.pageData
+    return {
       context: {
-        language,
-        siteMenu,
-        siteTitle,
-        pagePath,
-        pageTitle,
         otherRetailsStoresTitle,
         otherRetailsStoresDescription,
         otherRetailsStoresButtonText,
@@ -47,6 +25,6 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
           locaiton: shop.locaiton,
         }))
       },
-    })
+    }
   })
 }

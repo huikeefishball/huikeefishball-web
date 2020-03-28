@@ -1,23 +1,8 @@
-const path = require(`path`)
+const { createLocalizedPage } = require("./helper")
 
-const { languages } = require('../locales')
-const {
-  localizeURL,
-  localizeMenu,
-} = require('../utils/localization')
-
-module.exports = async ({ gatsby, commonData, pageData }) => {
-  const pagePath = pageData.path
-  languages.forEach(({ 
-    code: language,
-  }) => {
+module.exports = async (params) => {
+  await createLocalizedPage(params, (language) => {
     const {
-      site_title: { [language]: siteTitle },
-      site_menu,
-    } = commonData
-    const siteMenu = localizeMenu(language, site_menu)
-    const {
-      title: { [language]: pageTitle },
       slides,
       about_us: {
         title: { [language]: aboutUsTitle },
@@ -44,16 +29,9 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
           author: { [language]: teamQuoteAuthor },
         },
       },
-    } = pageData
-    gatsby.actions.createPage({
-      path: localizeURL(language, pagePath),
-      component: path.resolve(`src/templates/home.js`),
+    } = params.pageData
+    return {
       context: {
-        language,
-        siteTitle,
-        siteMenu,
-        pagePath,
-        pageTitle,
         slides,
         aboutUsTitle,
         aboutUsContent,
@@ -69,6 +47,6 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
         teamQuoteContent,
         teamQuoteAuthor,
       },
-    })
+    }
   })
 }

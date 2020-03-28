@@ -1,16 +1,9 @@
-const path = require(`path`)
+const { createLocalizedPage } = require("./helper")
 
-const { languages } = require('../locales')
-const {
-  localizeURL,
-  localizeMenu,
-} = require('../utils/localization')
-
-module.exports = async ({ gatsby, commonData, pageData }) => {
-  const pagePath = pageData.path
-  const { list_items } = pageData
+module.exports = async (params) => {
+  const { list_items } = params.pageData
   const productIdsList = list_items.map(({ id }) => id)
-  const result = await gatsby.graphql(`
+  const result = await params.gatsby.graphql(`
     {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/products/" } }) {
         edges {
@@ -39,22 +32,14 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
       }
     }
   `)
-  languages.forEach(({ 
-    code: language,
-  }) => {
+  await createLocalizedPage(params, (language) => {
     const {
-      site_title: { [language]: siteTitle },
-      site_menu,
-    } = commonData
-    const siteMenu = localizeMenu(language, site_menu)
-    const {
-      title: { [language]: pageTitle },
       description: { [language]: pageDesciption },
       quote: {
         content: { [language]: quoteContent },
         author: { [language]: quoteAuthor },
       },
-    } = pageData
+    } = params.pageData
     const products = result.data.allMarkdownRemark.edges.reduce((acc, edge) => {
       const {
         id,
@@ -72,20 +57,13 @@ module.exports = async ({ gatsby, commonData, pageData }) => {
       }
       return acc
     }, {})
-    gatsby.actions.createPage({
-      path: localizeURL(language, pagePath),
-      component: path.resolve(`src/templates/products.js`),
+    return {
       context: {
-        language,
-        siteMenu,
-        siteTitle,
-        pagePath,
-        pageTitle,
         pageDesciption,
         quoteContent,
         quoteAuthor,
         products: productIdsList.map(productId => products[productId]),
       },
-    })
+    }
   })
 }

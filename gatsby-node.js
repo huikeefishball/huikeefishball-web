@@ -16,7 +16,9 @@ const pageOrder = [
 
 exports.createPages = async (gatsby) => {
   const pageData = pageOrder.reduce((acc, key) => {
-    acc[key] = yaml.safeLoad(fs.readFileSync(path.resolve(`data/${key}_page.yml`), "utf-8"))
+    const data = yaml.safeLoad(fs.readFileSync(path.resolve(`data/${key}_page.yml`), "utf-8"))
+    data.id = key
+    acc[key] = data
     return acc
   }, {})
 
