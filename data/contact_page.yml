@@ -1,0 +1,34 @@
+menu_title:
+  en: Contact
+  ja: 聯絡我們
+  tc: 聯絡我們
+title:
+  en: our contact
+  ja: 聯絡我們
+  tc: 聯絡我們
+contact_us:
+  title:
+    ja: 跟我們談談
+    tc: 跟我們談談
+    en: let’s talk
+  subtitle:
+    ja: 如有任何批發或其他查詢，請隨時與我們聯繫
+    tc: 如有任何批發或其他查詢，請隨時與我們聯繫
+    en: Feel free to contact us for all wholesale or other
+  address:
+    en: '2/F 330A Castle Peak Road, Cheung Sha Wan, Kowloon, Hong Kong'
+    ja: 香港九龍長沙灣青山道330A號2樓
+    tc: 香港九龍長沙灣青山道330A號2樓
+  phone: +852 2194 8612
+  email: order@fishball.com.hk
+join_us:
+  title:
+    en: Join us
+    ja: 加入我們
+    tc: 加入我們
+  subtitle:
+    en: 'We are hiring full time and part time, contact us for more information'
+    ja: 我們正在全職和兼職，請與我們聯繫以獲取更多信息
+    tc: 我們正在全職和兼職，請與我們聯繫以獲取更多信息
+  phone: +852 2194 8612
+  email: hr@fishball.com.hk
