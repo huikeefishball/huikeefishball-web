@@ -1,10 +1,13 @@
 const path = require(`path`)
 
 const { languages } = require('../locales')
-const { localizeURL } = require('../utils/localization')
+const {
+  localizeURL,
+  localizeMenu,
+} = require('../utils/localization')
 
-module.exports = async ({ gatsby, pageData }) => {
-  const pagePath = "/products"
+module.exports = async ({ gatsby, commonData, pageData }) => {
+  const pagePath = pageData.path
   const { list_items } = pageData
   const productIdsList = list_items.map(({ id }) => id)
   const result = await gatsby.graphql(`
@@ -39,6 +42,7 @@ module.exports = async ({ gatsby, pageData }) => {
   languages.forEach(({ 
     code: language,
   }) =>{
+    const siteMenu = localizeMenu(language, commonData.siteMenu)
     const {
       title: { [language]: pageTitle },
       description: { [language]: pageDesciption },
@@ -69,6 +73,7 @@ module.exports = async ({ gatsby, pageData }) => {
       component: path.resolve(`src/templates/products.js`),
       context: {
         language,
+        siteMenu,
         pagePath,
         pageTitle,
         pageDesciption,

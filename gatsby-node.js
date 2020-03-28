@@ -20,10 +20,24 @@ exports.createPages = async (gatsby) => {
     return acc
   }, {})
   
+  const commonData = {
+    siteMenu: pageOrder.map(key => {
+      const {
+        path: pagePath,
+        menu_title: title,
+      } = pageData[key]
+      return {
+        key,
+        path: pagePath,
+        title,
+      }
+    })
+  }
+
   await Promise.all([
-    createHomePages({ gatsby, pageData: pageData.home }),
-    createProductsPages({ gatsby, pageData: pageData.products }),
-    createShopsPages({ gatsby, pageData: pageData.shops }),
-    createContactPages({ gatsby, pageData: pageData.contact }),
+    createHomePages({ gatsby, commonData, pageData: pageData.home }),
+    createProductsPages({ gatsby, commonData, pageData: pageData.products }),
+    createShopsPages({ gatsby, commonData, pageData: pageData.shops }),
+    createContactPages({ gatsby, commonData, pageData: pageData.contact }),
   ])
 }

@@ -6,6 +6,7 @@ import ProductListItem from "../components/product-list-item"
 const ProductsPage = (props) => {
   const {
     language,
+    siteMenu,
     pagePath,
     pageTitle,
     pageDesciption,
@@ -17,6 +18,7 @@ const ProductsPage = (props) => {
     <Layout
       language={language}
       pagePath={pagePath}
+      siteMenu={siteMenu}
     >
       <h1>{pageTitle}</h1>
       <div>

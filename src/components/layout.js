@@ -9,6 +9,7 @@ const Layout = (props) => {
   const {
     children,
     language,
+    siteMenu,
     pagePath,
   } = props 
   return (
@@ -17,6 +18,7 @@ const Layout = (props) => {
         <Header
           language={language}
           pagePath={pagePath}
+          siteMenu={siteMenu}
         />
         {children}
       </div>

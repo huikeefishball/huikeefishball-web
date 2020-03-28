@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 const ShopsPage = (props) => {
   const {
     language,
+    siteMenu,
     pagePath,
     pageTitle,
     shops,
@@ -17,6 +18,7 @@ const ShopsPage = (props) => {
     <Layout
       language={language}
       pagePath={pagePath}
+      siteMenu={siteMenu}
     >
       <section>
         <h2>{pageTitle}</h2>

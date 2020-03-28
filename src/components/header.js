@@ -8,6 +8,7 @@ import { localizeURL } from "../utils/localization"
 const Header = (props) => {
   const {
     language,
+    siteMenu,
     pagePath,
   } = props
 
@@ -15,18 +16,14 @@ const Header = (props) => {
     <header>
       <nav>
         <ul>
-          <li>
-            <Link to={localizeURL(language, "/")}>Home</Link>
-          </li>
-          <li>
-            <Link to={localizeURL(language, "/products")}>Products</Link>
-          </li>
-          <li>
-            <Link to={localizeURL(language, "/shops")}>Shops</Link>
-          </li>
-          <li>
-            <Link to={localizeURL(language, "/contact")}>Contact</Link>
-          </li>
+          {siteMenu.map(({ key, title, path }) => (
+            <li
+              key={key}
+              className={`${path === pagePath ? "active" : ''}`}
+            >
+              <Link to={localizeURL(language, path)}>{title}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <LanguageSwitcher

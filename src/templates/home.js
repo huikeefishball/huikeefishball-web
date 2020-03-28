@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 const HomePage = (props) => {
   const {
     language,
+    siteMenu,
     pagePath,
     pageTitle,
     slides,
@@ -26,6 +27,7 @@ const HomePage = (props) => {
     <Layout
       language={language}
       pagePath={pagePath}
+      siteMenu={siteMenu}
     >
       <section id="slideshow">
         {slides.map(({ image: slide }) => (

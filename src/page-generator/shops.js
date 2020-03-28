@@ -1,13 +1,17 @@
 const path = require(`path`)
 
 const { languages } = require('../locales')
-const { localizeURL } = require('../utils/localization')
+const {
+  localizeURL,
+  localizeMenu,
+} = require('../utils/localization')
 
-module.exports = async ({ gatsby, pageData }) => {
+module.exports = async ({ gatsby, commonData, pageData }) => {
+  const pagePath = pageData.path
   languages.forEach(({ 
     code: language,
   }) =>{
-    const pagePath = "/shops"
+    const siteMenu = localizeMenu(language, commonData.siteMenu)
     const {
       title: { [language]: pageTitle },
       other_retails_stores: {
@@ -23,6 +27,7 @@ module.exports = async ({ gatsby, pageData }) => {
       component: path.resolve(`src/templates/shops.js`),
       context: {
         language,
+        siteMenu,
         pagePath,
         pageTitle,
         otherRetailsStoresTitle,
