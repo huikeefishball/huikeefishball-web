@@ -1,0 +1,46 @@
+menu_title:
+  ja: 店鋪
+  en: Shops
+  tc: 店鋪
+title:
+  ja: 我們的店鋪
+  tc: 我們的店鋪
+  en: our shops
+list_items:
+  - location: '{"type":"Point","coordinates":[114.192228,22.3297691]}'
+    name:
+      ja: 長沙灣1號店
+      tc: 長沙灣1號店
+      en: Cheung Sha Wan
+    opening_hours: '8:30am - 7:30pm'
+    phone: +852 2386 7049
+    address:
+      en: 'G/F 16 Cheung Fat Street, Cheung Sha Wan '
+      ja: 長沙灣長發街16號地下
+      tc: 長沙灣長發街16號地下
+  - name:
+      en: Cheung Sha Wan
+      ja: 長沙灣2號店
+      tc: 長沙灣2號店
+    address:
+      ja: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+      tc: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+      en: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+    location: '{"type":"Point","coordinates":[113.4407043,21.8385553]}'
+    phone: +852 3709 6220
+    opening_hours: '9:30am - 7:30pm'
+other_retails_stores:
+  title:
+    ja: 超市 及 銷售點
+    tc: 超市 及 銷售點
+    en: Supermarket and Roadshows
+  description:
+    en: >-
+      Our supermarker and roadshow selling points updates from time to time.
+      Please click read more get more information.
+    ja: 我們的超級標記和路演賣點會不時更新。  請點擊閱讀更多以獲取更多信息。
+    tc: 我們的超級標記和路演賣點會不時更新。  請點擊閱讀更多以獲取更多信息。
+  button_text:
+    en: Read More
+    ja: 了解更多
+    tc: 了解更多
