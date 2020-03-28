@@ -11,8 +11,9 @@ exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const productPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/products_page.yml"), "utf-8"))
   const shopsPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/shops_page.yml"), "utf-8"))
+  const contactPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/contact_page.yml"), "utf-8"))
   await createHomePages(createPage, graphql)
   await createProductsPages(createPage, graphql, productPageData)
   await createShopsPages(createPage, graphql, shopsPageData)
-  await createContactPages(createPage, graphql)
+  await createContactPages(createPage, graphql, contactPageData)
 }
