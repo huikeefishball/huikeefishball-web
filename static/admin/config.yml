@@ -161,3 +161,117 @@ collections:
                 valueField: "id"
                 searchFields: ["id", "title.en", "title.ja", "title.tc"]
                 displayFields: ["title.tc", "title.en"]
+      - label: "店鋪頁面 Shops Page"
+        name: "shops_page"
+        file: "data/shops_page.yml"
+        fields:
+          - label: "選單名稱 Menu Title"
+            name: "menu_title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
+          - label: "標題 Title"
+            name: "title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
+          - label: "店鋪列表項目 Shops List Items"
+            label_singular: "店鋪列表項目 Shops List Item"
+            name: "list_items"
+            widget: "list"
+            collapsed: false
+            fields:
+              - label: "店鋪名稱 Shop Name"
+                name: "name"
+                widget: object
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "地址 Address"
+                name: "address"
+                widget: object
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "坐標 Location"
+                name: "location"
+                widget: map
+              - label: "電話 Phone"
+                name: "phone"
+                widget: string
+              - label: "營業時間 Opening Hours"
+                name: "opening_hours"
+                widget: text
+          - label: "其他銷售點 Other Retails Stores"
+            name: "other_retails_stores"
+            widget: "object"
+            fields:
+              - label: "標題 Title"
+                name: "title"
+                widget: object
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "描述 Description"
+                name: "description"
+                widget: object
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "按扭文字 Button Text"
+                name: "button_text"
+                widget: object
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
