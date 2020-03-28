@@ -278,4 +278,118 @@ collections:
               - label: "按鈕連結 Button Link"
                 name: "button_link"
                 widget: string
-
+      - label: "聯絡頁面 Contact Page"
+        name: "contact_page"
+        file: "data/contact_page.yml"
+        fields:
+          - label: "選單名稱 Menu Title"
+            name: "menu_title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
+          - label: "標題 Title"
+            name: "title"
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
+          - label: "聯絡我們部分 Contact Us Section"
+            name: "contact_us"
+            widget: "object"
+            fields:
+              - label: "標題 Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "副標題 Subtitle"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "地址 Address"
+                name: "address"
+                widget: "object"
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "電話 Phone"
+                name: "phone"
+                widget: string
+              - label: "電郵 Email"
+                name: "email"
+                widget: string
+          - label: "加入我們部分 Join Us Section"
+            name: "join_us"
+            widget: "object"
+            fields:
+              - label: "標題 Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "副標題 Subtitle"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - label: "English"
+                    name: "en"
+                    widget: string
+                  - label: "日本語"
+                    name: "ja"
+                    widget: string
+                  - label: "繁體中文"
+                    name: "tc"
+                    widget: string
+              - label: "電話 Phone"
+                name: "phone"
+                widget: string
+              - label: "電郵 Email"
+                name: "email"
+                widget: string
