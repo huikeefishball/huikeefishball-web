@@ -7,13 +7,23 @@ const createProductsPages = require('./src/page-generator/products')
 const createShopsPages = require('./src/page-generator/shops')
 const createContactPages = require('./src/page-generator/contact')
 
+const pageOrder = [
+  "home",
+  "products",
+  "shops",
+  "contact",
+]
+
 exports.createPages = async (gatsby) => {
-  const homePageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/home_page.yml"), "utf-8"))
-  const productPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/products_page.yml"), "utf-8"))
-  const shopsPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/shops_page.yml"), "utf-8"))
-  const contactPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/contact_page.yml"), "utf-8"))
-  await createHomePages({ gatsby, pageData: homePageData })
-  await createProductsPages({ gatsby, pageData: productPageData })
-  await createShopsPages({ gatsby, pageData: shopsPageData })
-  await createContactPages({ gatsby, pageData: contactPageData })
+  const pageData = pageOrder.reduce((acc, key) => {
+    acc[key] = yaml.safeLoad(fs.readFileSync(path.resolve(`data/${key}_page.yml`), "utf-8"))
+    return acc
+  }, {})
+  
+  await Promise.all([
+    createHomePages({ gatsby, pageData: pageData.home }),
+    createProductsPages({ gatsby, pageData: pageData.products }),
+    createShopsPages({ gatsby, pageData: pageData.shops }),
+    createContactPages({ gatsby, pageData: pageData.contact }),
+  ])
 }
