@@ -9,10 +9,11 @@ const createContactPages = require('./src/page-generator/contact')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
+  const homePageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/home_page.yml"), "utf-8"))
   const productPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/products_page.yml"), "utf-8"))
   const shopsPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/shops_page.yml"), "utf-8"))
   const contactPageData = yaml.safeLoad(fs.readFileSync(path.resolve("data/contact_page.yml"), "utf-8"))
-  await createHomePages(createPage, graphql)
+  await createHomePages(createPage, graphql, homePageData)
   await createProductsPages(createPage, graphql, productPageData)
   await createShopsPages(createPage, graphql, shopsPageData)
   await createContactPages(createPage, graphql, contactPageData)
