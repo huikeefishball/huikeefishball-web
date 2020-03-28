@@ -3,11 +3,11 @@ const path = require(`path`)
 const { languages } = require('../locales')
 const { localizeURL } = require('../utils/localization')
 
-module.exports = async (createPage, graphql, pageData) => {
+module.exports = async ({ gatsby, pageData }) => {
   const pagePath = "/products"
   const { list_items } = pageData
   const productIdsList = list_items.map(({ id }) => id)
-  const result = await graphql(`
+  const result = await gatsby.graphql(`
     {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/products/" } }) {
         edges {
@@ -64,7 +64,7 @@ module.exports = async (createPage, graphql, pageData) => {
       }
       return acc
     }, {})
-    createPage({
+    gatsby.actions.createPage({
       path: localizeURL(language, pagePath),
       component: path.resolve(`src/templates/products.js`),
       context: {

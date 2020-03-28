@@ -3,7 +3,7 @@ const path = require(`path`)
 const { languages } = require('../locales')
 const { localizeURL } = require('../utils/localization')
 
-module.exports = async (createPage, _, pageData) => {
+module.exports = async ({ gatsby, pageData }) => {
   languages.forEach(({ 
     code: language,
   }) =>{
@@ -18,7 +18,7 @@ module.exports = async (createPage, _, pageData) => {
       },
       list_items,
     } = pageData
-    createPage({
+    gatsby.actions.createPage({
       path: localizeURL(language, pagePath),
       component: path.resolve(`src/templates/shops.js`),
       context: {
