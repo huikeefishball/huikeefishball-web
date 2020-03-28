@@ -75,6 +75,9 @@ collections:
         name: "home_page"
         file: "data/home_page.yml"
         fields:
+          - label: "路徑 Path"
+            name: "path"
+            widget: string
           - label: "選單名稱 Menu Title"
             name: "menu_title"
             widget: object
@@ -307,6 +310,9 @@ collections:
         name: "products_page"
         file: "data/products_page.yml"
         fields:
+          - label: "路徑 Path"
+            name: "path"
+            widget: string
           - label: "選單名稱 Menu Title"
             name: "menu_title"
             widget: object
@@ -397,6 +403,9 @@ collections:
         name: "shops_page"
         file: "data/shops_page.yml"
         fields:
+          - label: "路徑 Path"
+            name: "path"
+            widget: string
           - label: "選單名稱 Menu Title"
             name: "menu_title"
             widget: object
@@ -514,6 +523,9 @@ collections:
         name: "contact_page"
         file: "data/contact_page.yml"
         fields:
+          - label: "路徑 Path"
+            name: "path"
+            widget: string
           - label: "選單名稱 Menu Title"
             name: "menu_title"
             widget: object
