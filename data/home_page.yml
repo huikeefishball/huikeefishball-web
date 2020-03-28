@@ -1,0 +1,125 @@
+menu_title:
+  en: Home
+  ja: 首頁
+  tc: 首頁
+title:
+  ja: 首頁
+  tc: 首頁
+  en: Home
+about_us:
+  content:
+    en: >-
+      Our story begins back in the 50s at Cheung Sha Wan, Hong Kong. Back in the
+      day we were just a wooden hawker trolley, strolling around the wet market
+      selling our homemade fishballs.  Our little operations slowly made its way
+      to our very first shop in 1979 and Hui Kee Fishball shop was born. Until
+      this day, we kept this small production site as part of our heritage and
+      continue to produce different handmade items at the shop every single
+      day. 
+
+
+      Since then a lot has changed.  We are learning so much more about
+      fishballs. From sourcing raw materials all the way down to the best
+      production methods and food safety.  And with years of planning and
+      preparation, after tons of serious testing and sampling, finally in
+      December 2017 our production team moved into our new automated factory at
+      Kwai Chung, Hong Kong.
+
+
+      For a very long time, fishballs have been unappreciated. We believe this
+      has to change. We strives to bring changes to the industry, we are
+      committed to providing Hong Kong consumers with safe, reliable and high
+      quality products and will continue to learn and improve. It is our mission
+      to create the very best Hong Kong style fishballs and meatballs
+      appreciated by all.
+    ja: >-
+      我們的故事始源於五十年代，那些年，我們只是木頭車小販，推著小車穿梭於長沙灣街市售賣自家製的魚旦。 就是這樣，
+      我們慢慢從街頭搬入第一家店。1979年，長沙灣許記魚旦門市正式誕生。時至今日，我們仍然保留小工場生產手作產品，延續傳統。
+
+
+      我們不斷學習研究關於魚旦的一切， 由採購原材料到最好的生產方法以至食物安全。經過多年的計劃和籌備，無數認真的測試，
+      我們的生產團隊終於在2017年12月正式遷入建於香港葵涌的自動化工場。
+
+
+      一直以來，魚旦都被人認為是下價食品，賣不起價錢的魚就是做魚旦的材料，
+      這個觀念需要改變。我們用心搜羅高品質的原材料，探索新技術和口味，結合傳統與現代化生產，務求創造出大家最喜愛的港式魚旦和肉丸。
+    tc: >-
+      我們的故事始源於五十年代，那些年，我們只是木頭車小販，推著小車穿梭於長沙灣街市售賣自家製的魚旦。 就是這樣，
+      我們慢慢從街頭搬入第一家店。1979年，長沙灣許記魚旦門市正式誕生。時至今日，我們仍然保留小工場生產手作產品，延續傳統。
+
+
+      我們不斷學習研究關於魚旦的一切， 由採購原材料到最好的生產方法以至食物安全。經過多年的計劃和籌備，無數認真的測試，
+      我們的生產團隊終於在2017年12月正式遷入建於香港葵涌的自動化工場。
+
+
+      一直以來，魚旦都被人認為是下價食品，賣不起價錢的魚就是做魚旦的材料，
+      這個觀念需要改變。我們用心搜羅高品質的原材料，探索新技術和口味，結合傳統與現代化生產，務求創造出大家最喜愛的港式魚旦和肉丸。
+  title:
+    en: about us
+    ja: 關於我們
+    tc: 關於我們
+  quote:
+    content:
+      en: >-
+        “Be proud of what you do, your passion can lead you to amazing things.
+        DREAM BIG”
+      ja: 「忠於自己的堅持，為自己所做的事情而自豪，你的熱誠可引領你做了不起的事。。。 勇於夢想」
+      tc: 「忠於自己的堅持，為自己所做的事情而自豪，你的熱誠可引領你做了不起的事。。。 勇於夢想」
+    author:
+      en: 'Alfred Hui, CEO'
+      ja: 'Alfred Hui, 行政總裁'
+      tc: 'Alfred Hui, 行政總裁'
+certificates:
+  title:
+    ja: 我們的認證
+    tc: 我們的認證
+    en: our certifications
+  content:
+    en: >-
+      We have become Hong Kong’s first world class automated meatball
+      manufacturing factory and first to be accredited with world recognized
+      certifications.
+    ja: 我們成為全香港首間達到世界級水準及擁有國際認証的全自動丸類生產工場。
+    tc: 我們成為全香港首間達到世界級水準及擁有國際認証的全自動丸類生產工場。
+  certicates: |-
+    ISO22000:2005 
+    ISO9001:2015
+    ISO14001:2015
+    OHSAS18001:2007 
+    HACCP
+    MSC CoC
+  quote:
+    content:
+      ja: 「味道是重要但食物安全亦然，無論如何我們的工場都必需要做到國際標準」
+      tc: 「味道是重要但食物安全亦然，無論如何我們的工場都必需要做到國際標準」
+      en: >-
+        “Taste is important but food safety is just as important, so no matter
+        how hard it is our factory must meet international standards” 
+    author:
+      ja: 'Martin Leung, 總經理'
+      tc: 'Martin Leung, 總經理'
+      en: 'Martin Leung, General Manager'
+team:
+  title:
+    ja: 我們的團隊
+    tc: 我們的團隊
+    en: our team
+  content:
+    ja: '我們的團體擁有相同的核心價值, 縱然大家的背景和經驗各異. 我們對自己的工作充滿熱誠, 無間斷挑戰自我, 努力做到最好。'
+    tc: '我們的團體擁有相同的核心價值, 縱然大家的背景和經驗各異. 我們對自己的工作充滿熱誠, 無間斷挑戰自我, 努力做到最好。'
+    en: >-
+      We are from different backgrounds with different experiences but our core
+      values are the same.  All of us work passionately, strive to deliver the
+      best and continuously challenge ourselves to do better.
+  certicates: a
+  quote:
+    content:
+      en: >-
+        “We discuss, we argue, we find solutions… I love every moment, because I
+        feel everyone is in this together and everyone is passionate” 
+      ja: 「我們會討論，會有爭論， 但一定會尋找共識和解決方案。。。每一刻都是我所享受的，讓我感到我們的團隊在並肩作戰，做好每件事」
+      tc: 「我們會討論，會有爭論， 但一定會尋找共識和解決方案。。。每一刻都是我所享受的，讓我感到我們的團隊在並肩作戰，做好每件事」
+    author:
+      ja: 'Niki Tang, 常務董事'
+      tc: 'Niki Tang, 常務董事'
+      en: 'Niki Tang, Managing Director'
