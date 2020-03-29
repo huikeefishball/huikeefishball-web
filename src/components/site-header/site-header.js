@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import LanguageSwitcher from "./language-switcher"
+import LanguageSwitcher from "../language-switcher"
 
-import { localizeURL } from "../utils/localization"
+import { localizeURL } from "../../utils/localization"
 
-const Header = (props) => {
+export const SiteHeader = (props) => {
   const {
     language,
     siteMenu,
@@ -33,5 +33,3 @@ const Header = (props) => {
     </header>
   )
 }
-
-export default Header

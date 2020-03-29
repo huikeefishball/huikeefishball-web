@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-import Header from "./header"
+import { SiteHeader } from "./site-header"
 import Footer from "./footer"
 
 import "../styles/index.styl"
@@ -26,7 +26,7 @@ const Layout = (props) => {
         />
       </Helmet>
       <div>
-        <Header
+        <SiteHeader
           language={language}
           pagePath={pagePath}
           siteMenu={siteMenu}
