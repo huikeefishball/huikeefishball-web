@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import Header from "./header"
 import Footer from "./footer"
 
-import "../styles/index.scss"
+import "../styles/index.styl"
 
 const Layout = (props) => {
   const {

@@ -7,7 +7,7 @@
 module.exports = {
   plugins: [
     "gatsby-plugin-netlify-cms",
-    "gatsby-plugin-sass",
+    "gatsby-plugin-stylus",
     {
       resolve: "gatsby-source-filesystem",
       options: {
