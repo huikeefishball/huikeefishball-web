@@ -1,18 +1,24 @@
 import React from "react"
 import { Link } from "gatsby"
+import classnames from "classnames"
 
-import { localizeURL } from "../utils/localization"
+import style from "./language-switcher.module.styl"
 
-import { languages } from "../locales"
+import { localizeURL } from "../../utils/localization"
 
-const LanguageSwitcher = (props) => {
+import { languages } from "../../locales"
+
+export const LanguageSwitcher = (props) => {
   const {
     language: currentLanguage,
     pagePath,
   } = props
   return (
-    <nav>
-      <ul>
+    <nav
+      className={classnames(style.root, props.className)}
+      style={props.style}
+    >
+      <ul className="list-reset">
         {languages.map(({ code: language, name }) => (
           <li key={language}>
             {language === currentLanguage ? (
@@ -26,5 +32,3 @@ const LanguageSwitcher = (props) => {
     </nav>
   )
 }
-
-export default LanguageSwitcher

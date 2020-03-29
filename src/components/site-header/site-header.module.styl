@@ -1,0 +1,197 @@
+@import "../../styles/variables"
+
+.banner
+  display flex
+  justify-content center
+  align-items center
+
+  padding 30px
+  background-image url("./bg.jpg")
+  background-position center
+  background-repeat repeat-x
+
+  img
+    width 220px
+
+  @media screen and (max-width screen-mobile)
+    padding 10px
+    justify-content space-between
+
+    img
+      width 132px
+
+.nav
+  background white
+
+  @media screen and (max-width screen-mobile)
+    display none
+
+  &::after
+    display block
+    content ''
+    height 4px
+    background-image url(./hr.png)
+    background-repeat repeat-x
+
+  > div
+    display flex
+    justify-content space-between
+    align-items center
+    box-sizing border-box
+
+  a
+  a:visited
+    text-decoration none
+
+    &:hover
+    &:active
+      color theme-yellow
+
+.main-menu
+  width 100%
+  max-width 50vw
+
+  @media screen and (min-width 1120px)
+    max-width 560px
+
+  ul
+    display flex
+    justify-content space-between
+
+    padding 8px
+
+    font-weight bold
+
+    li
+      a
+        text-transform uppercase
+
+        &
+        &:visited
+          color theme-black
+
+        &:hover
+        ../.active ^[-1..-1]
+          color theme-yellow
+          &:not(:hover)
+            text-decoration underline
+
+.language-switcher
+  a
+    &
+    &:visited
+      color theme-yellow
+
+.header-modal
+  position fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+  display none
+  flex-direction column
+  justify-content space-between
+
+  padding 20px
+  background-color theme-yellow
+
+  color white
+
+  transition-timing-function ease
+  transition-duration 0.2s
+  transition-property opacity, transform
+
+  @media screen and (max-width screen-mobile)
+    display flex
+
+  .main-menu
+  .language-switcher
+    a
+      &
+      &:visited
+        color currentColor
+
+  .main-menu
+    ul
+      flex-direction column
+      align-items center
+
+      li
+        padding 8px
+
+        a
+          display block
+          padding 8px
+          text-decoration none !important
+
+          font-size 2rem
+  
+  .language-switcher
+    margin-top 24px
+    text-align center
+
+    a
+      font-size 1rem
+  
+  &--opened
+    opacity 1
+
+    ~/:not(&)
+      opacity 0
+      transform scale(1.2)
+      pointer-events: none
+
+.hamburger
+  display none
+  padding 15px
+  background-color theme-yellow
+  border-radius 50%
+
+  box-shadow 0 2px #A8804D
+
+  @media screen and (max-width screen-mobile)
+    display block
+
+  > div
+    width 18px
+    height @width
+    display flex
+    flex-direction column
+    justify-content space-between
+
+    > span
+      display block
+      width 18px
+      height 2px
+      background-color white
+      border-radius 2px
+
+      transition-timing-function ease
+      transition-duration 0.2s
+      transition-property width, transform
+
+    span
+      background-color: darken(white, 10)
+  
+  &--pressed
+    transform translateY(1px)
+    box-shadow: none
+
+    span
+      position relative
+      z-index: 2
+
+      &:first-child
+        transform translateX(-2px) translateY(8px) rotate(45deg)
+
+      &:nth-child(2)
+        transform scaleY(0)
+
+      &:last-child
+        transform translateX(-2px) translateY(-8px) rotate(-45deg)
+
+      &:first-child
+      &:last-child
+        width: 22px
+

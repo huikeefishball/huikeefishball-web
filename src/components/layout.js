@@ -58,6 +58,7 @@ const Layout = (props) => {
           language={language}
           pagePath={pagePath}
           siteMenu={siteMenu}
+          siteTitle={siteTitle}
         />
         {children}
       </div>

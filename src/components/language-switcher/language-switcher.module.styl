@@ -1,0 +1,16 @@
+@import "../../styles/variables"
+
+.root
+  ul
+    li
+      display inline
+      font-size 0.78rem
+
+      &:not(:first-child)::before
+        content " / "
+
+      a
+        text-decoration underline 
+        white-space: nowrap
+
+
