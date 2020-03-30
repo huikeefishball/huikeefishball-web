@@ -1,10 +1,12 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-import { SiteHeader } from "./site-header"
-import { SiteFooter } from "./site-footer"
+import style from "./layout.module.styl"
 
-import "../styles/index.styl"
+import { SiteHeader } from "../site-header"
+import { SiteFooter } from "../site-footer"
+
+import "../../styles/index.styl"
 
 const importFontStyle = (language) => {
   let fontFamily = ""
@@ -33,7 +35,7 @@ const importFontStyle = (language) => {
   )
 }
 
-const Layout = (props) => {
+export const Layout = (props) => {
   const {
     children,
     language,
@@ -44,7 +46,7 @@ const Layout = (props) => {
     pageTitle,
   } = props 
   return (
-    <div>
+    <div className={style.root}>
       <Helmet defer={false} defaultTitle={siteTitle} titleTemplate={`%s | ${siteTitle}`}>
         <html lang={language} />
           <title>{pageTitle}</title>
@@ -67,5 +69,3 @@ const Layout = (props) => {
     </div>
   )
 }
-
-export default Layout

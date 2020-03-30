@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import { Layout } from "../components/layout"
 import ProductListItem from "../components/product-list-item"
 
 const ProductsPage = (props) => {

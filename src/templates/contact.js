@@ -2,7 +2,7 @@ import React from "react"
 
 import style from "./contact.module.styl"
 
-import Layout from "../components/layout"
+import { Layout } from "../components/layout"
 
 const ContactPage = (props) => {
   const {
