@@ -28,26 +28,29 @@ export const SiteHeader = (props) => {
       <div className={style.banner}>
         <div className={classnames(style.headerModal, { [style.headerModalOpened]: isModalOpen })}>
           <header />
-            <div>
-              <nav className={classnames(style.mainMenu, "mx-auto")}>
-                <ul className="list-reset">
-                  {siteMenu.map(({ key, title, path }) => (
-                    <li
-                      key={key}
-                      className={classnames({ [style.active]: path === pagePath })}
-                    >
-                      <Link to={localizeURL(language, path)}>{title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-              <LanguageSwitcher
-                className={style.languageSwitcher}
-                language={language}
-                pagePath={pagePath}
-              />
-            </div>
-            <footer />
+          <div>
+            <nav className={classnames(style.mainMenu, "mx-auto")}>
+              <ul className="list-reset">
+                {siteMenu.map(({ key, title, path }) => (
+                  <li
+                    key={key}
+                    className={classnames({ [style.active]: path === pagePath })}
+                  >
+                    <Link
+                      to={localizeURL(language, path)}
+                      onClick={onPressHamburger}
+                    >{title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <LanguageSwitcher
+              className={style.languageSwitcher}
+              language={language}
+              pagePath={pagePath}
+            />
+          </div>
+          <footer />
         </div>
         <img src={logo} alt={siteTitle} />
         <div 
