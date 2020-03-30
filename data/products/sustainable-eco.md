@@ -13,6 +13,7 @@ description:
     And this is just the beginning…
   ja: '經過多年的資料搜集和試驗，2015我們推出全港首創只用有認証可持續發展的鱈魚魚來做魚旦。到今天環保系列不只有鱈魚魚旦，還有鱈魚魚肉燒賣和鱈魚魚肉春卷，全都是用有認証可持續發展的魚來做. 而我們相信這只是開始…'
   tc: '經過多年的資料搜集和試驗，2015我們推出全港首創只用有認証可持續發展的鱈魚魚來做魚旦。到今天環保系列不只有鱈魚魚旦，還有鱈魚魚肉燒賣和鱈魚魚肉春卷，全都是用有認証可持續發展的魚來做. 而我們相信這只是開始…'
+description_position: right
 bg_image: /images/uploads/tuned_huikee007_re.jpg
 bg_title:
   en: Sustainable Fishball

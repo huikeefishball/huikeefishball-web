@@ -20,6 +20,7 @@ module.exports = async (params) => {
                 ja
                 tc
               }
+              description_position
               bg_image
               bg_title {
                 en
@@ -45,6 +46,7 @@ module.exports = async (params) => {
         id,
         title: { [language]: title },
         description: { [language]: description },
+        description_position: descriptionPosition,
         bg_image: bgImage,
         bg_title: { [language]: bgTitle },
       } = edge.node.frontmatter
@@ -52,6 +54,7 @@ module.exports = async (params) => {
         id,
         title,
         description,
+        descriptionPosition,
         bgImage,
         bgTitle,
       }

@@ -48,6 +48,13 @@ collections:
           - label: "繁體中文"
             name: "tc"
             widget: markdown
+      - label: "內文位置 Description Position"
+        name: description_position
+        widget: select
+        options:
+          - { label: "左 Left", value: "left" }
+          - { label: "右 Right", value: "right" }
+        defaults: left
       - label: "背景圖片 Background Image"
         name: "bg_image"
         widget: "image"

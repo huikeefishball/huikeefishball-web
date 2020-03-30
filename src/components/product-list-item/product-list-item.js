@@ -1,4 +1,5 @@
 import React from "react"
+import classnames from "classnames"
 
 import style from "./product-list-item.module.styl"
 
@@ -6,9 +7,16 @@ export const ProductListItem = (props) => {
   const {
     title,
     description,
+    descriptionPosition,
     bgImage,
     bgTitle,
   } = props
+  const introClassName = classnames(
+    style.intro,
+    {
+      [style.introRight]: descriptionPosition === "right",
+    }
+  )
   return (
     <li className={style.root}>
       <div className={style.imageWrapper}>
@@ -19,7 +27,7 @@ export const ProductListItem = (props) => {
           role="presentation"
         />
       </div>
-      <div className={style.intro}>
+      <div className={introClassName}>
         <h2 className="h2 text-theme-yellow">{title}</h2>
         <p>{description}</p>
       </div>
