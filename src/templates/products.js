@@ -1,7 +1,9 @@
 import React from "react"
 
+import style from "./products.module.styl"
+
 import { Layout } from "../components/layout"
-import ProductListItem from "../components/product-list-item"
+import { ProductListItem } from "../components/product-list-item"
 
 const ProductsPage = (props) => {
   const {
@@ -25,14 +27,18 @@ const ProductsPage = (props) => {
           </div>
         </div>
       </section>
-      <ul className="list-reset">
-        {products.map(product => (
-          <ProductListItem
-            key={product.id}
-            {...product}
-          />
-        ))}
-      </ul>
+      <section id="items">
+        <div className={`${style.list} container mx-auto`}>
+          <ul className="list-reset">
+            {products.map(product => (
+              <ProductListItem
+                key={product.id}
+                {...product}
+              />
+            ))}
+          </ul>
+        </div>
+      </section>
     </Layout>
   )
 }
