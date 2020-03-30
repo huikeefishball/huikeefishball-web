@@ -22,8 +22,9 @@ module.exports = async (params) => {
           address: shop.name[language],
           phone: shop.phone,
           openingHours: shop.opening_hours,
-          locaiton: shop.locaiton,
-        }))
+          location: JSON.parse(shop.location),
+        })),
+        googleMapsAPIKey: process.env.GOOGLE_MAPS_API_KEY,
       },
     }
   })

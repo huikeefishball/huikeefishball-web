@@ -3,12 +3,28 @@
 
 html
   font-size 18px
+  line-height: 1.5
+
   color theme-black
 
   a
     &
     &:visited
       color currentColor
+
+    &.outlined
+      display: inline-block
+      box-sizing border-box
+
+      min-width 130px
+      padding 10px 12px
+
+      border 1px solid currentColor
+      text-decoration none
+      text-align center
+      text-transform uppercase
+      font-size 16px
+      font-weight bold
 
   @media screen and (max-width screen-mobile)
     font-size 16px
@@ -45,15 +61,15 @@ h3
   font-size 1.78rem
   font-weight bold
 
+  &.icon.triangle
+    @media screen and (max-width screen-mobile)
+      text-align center
+
 .h2
   padding-top 8px
   padding-bottom @padding-top
   font-size 1.67rem
   font-weight bold
-
-  &.icon.triangle
-    @media screen and (max-width screen-mobile)
-      text-align center
 
 .h3
   padding-top 6px
@@ -93,8 +109,11 @@ h3
     .mail&
       background-image url(../assets/icons/mail.svg)
 
+    .clock&
+      background-image url(../assets/icons/clock.svg)
+
 .text-theme-yellow
-  color theme-yellow
+  color theme-yellow !important
 
 ul.icon-list
   @extends .list-reset

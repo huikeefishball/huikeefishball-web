@@ -1,0 +1,51 @@
+@import "../styles/variables"
+
+.list
+  > div
+    padding-top 40px
+
+    > ul
+      display flex
+      flex-wrap wrap
+
+      margin-bottom 80px
+
+      > li
+        width 50%
+
+        padding-top 20px
+        padding-bottom @padding-top
+
+        @media screen and (max-width screen-mobile)
+          width 100%
+
+        ul
+          margin-top 20px
+
+.map
+  width 100%
+  height 530px
+
+  @media screen and (max-width screen-mobile)
+    padding-left 0
+    padding-right @padding-left
+
+.pin
+  width 20px
+  height @width
+  background-color black
+
+.retails
+  padding-top 80px
+  padding-bottom @padding-top
+
+  > div
+    @media screen and (min-width (screen-mobile + 1px))
+      display flex
+
+      > *
+        flex 1
+
+    > div
+      @media screen and (max-width screen-mobile)
+        text-align center
