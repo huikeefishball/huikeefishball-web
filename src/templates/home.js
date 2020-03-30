@@ -33,12 +33,12 @@ const HomePage = (props) => {
         ))}
       </section>
       <section id="about">
-        <div>
+        <div className="container mx-auto">
           <div>
-            <p>{aboutUsQuoteContent}</p>
+            <p className="h3 text-theme-yellow">{aboutUsQuoteContent}</p>
             <div>{aboutUsQuoteAuthor}</div>
           </div>
-          <h2>{aboutUsTitle}</h2>
+          <h2 className="h2 icon triangle">{aboutUsTitle}</h2>
           {aboutUsContent.split('\n').map((p, i) => (
             <p key={i}>{p}</p>
           ))}
@@ -46,9 +46,9 @@ const HomePage = (props) => {
       </section>
       <section id="video" />
       <section id="certification">
-        <div>
+        <div className="container mx-auto">
           <div>
-            <h2>{certificationTitle}</h2>
+            <h2 className="h2 icon triangle">{certificationTitle}</h2>
             <p>{certificationContent}</p>
             <ul>
               {certifications.split('\n').map((cert, i) => (
@@ -57,19 +57,19 @@ const HomePage = (props) => {
             </ul>
           </div>
           <div>
-            <p>{certificationQuoteContent}</p>
+            <p className="h3 text-theme-yellow">{certificationQuoteContent}</p>
             <div>{certificationQuoteAuthor}</div>
           </div>
         </div>
       </section>
       <section id="team">
-        <div>
+        <div className="container mx-auto">
           <div>
-            <h2>{teamTitle}</h2>
+            <h2 className="h2 icon triangle">{teamTitle}</h2>
             <p>{teamContent}</p>
           </div>
           <div>
-            <p>{teamQuoteContent}</p>
+            <p className="h3 text-theme-yellow">{teamQuoteContent}</p>
             <div>{teamQuoteAuthor}</div>
           </div>
         </div>

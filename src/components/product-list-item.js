@@ -15,7 +15,7 @@ const ProductListItem = (props) => {
         role="presentation"
       />
       <div>
-        <h2>{title}</h2>
+        <h2 className="h2 text-theme-yellow">{title}</h2>
         <p>{description}</p>
         <span>{bgTitle}</span>
       </div>

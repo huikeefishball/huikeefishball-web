@@ -13,15 +13,19 @@ const ProductsPage = (props) => {
   } = props.pageContext
   return (
     <Layout {...restProps}>
-      <h1>{restProps.pageTitle}</h1>
-      <div>
-        <div>
-          <p>{quoteContent}</p>
-          <p>{quoteAuthor}</p>
+      <section id="intro" className="bg-a">
+        <div className="container mx-auto">
+          <h1 className="h1 icon triangle">{restProps.pageTitle}</h1>
+          <div>
+            <div>
+              <p className="h2 text-theme-yellow">{quoteContent}</p>
+              <p>{quoteAuthor}</p>
+            </div>
+            <p>{pageDesciption}</p>
+          </div>
         </div>
-        <p>{pageDesciption}</p>
-      </div>
-      <ul>
+      </section>
+      <ul className="list-reset">
         {products.map(product => (
           <ProductListItem
             key={product.id}
