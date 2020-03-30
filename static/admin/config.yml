@@ -88,6 +88,19 @@ collections:
               - label: "繁體中文"
                 name: "tc"
                 widget: string
+          - label: "網頁頁尾文字 Stie Footer Text"
+            name: site_footer_text
+            widget: object
+            fields:
+              - label: "English"
+                name: "en"
+                widget: string
+              - label: "日本語"
+                name: "ja"
+                widget: string
+              - label: "繁體中文"
+                name: "tc"
+                widget: string
       - label: "首面 Home Page"
         name: "home_page"
         file: "data/home_page.yml"

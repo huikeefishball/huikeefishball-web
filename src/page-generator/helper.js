@@ -12,6 +12,7 @@ async function createLocalizedPage({ gatsby, commonData, pageData }, getCustomiz
     const {
       site_title: { [language]: siteTitle },
       site_menu,
+      site_footer_text: { [language]: siteFooterText },
     } = commonData
     const siteMenu = localizeMenu(language, site_menu)
     const {
@@ -28,6 +29,7 @@ async function createLocalizedPage({ gatsby, commonData, pageData }, getCustomiz
         language,
         siteMenu,
         siteTitle,
+        siteFooterText,
         pageID,
         pagePath,
         pageTitle,

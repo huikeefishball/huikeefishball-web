@@ -2,3 +2,7 @@ site_title:
   en: Hui Kee Fishball
   ja: 許記魚旦
   tc: 許記魚旦
+site_footer_text:
+  en: 'ALL RIGHTS RESERVED BY BILLS FOOD FACTORY LIMITED {{year}}'
+  ja: 'ALL RIGHTS RESERVED BY BILLS FOOD FACTORY LIMITED {{year}}'
+  tc: 'ALL RIGHTS RESERVED BY BILLS FOOD FACTORY LIMITED {{year}}'

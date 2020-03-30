@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 import { SiteHeader } from "./site-header"
-import Footer from "./footer"
+import { SiteFooter } from "./site-footer"
 
 import "../styles/index.styl"
 
@@ -39,6 +39,7 @@ const Layout = (props) => {
     language,
     siteMenu,
     siteTitle,
+    siteFooterText,
     pagePath,
     pageTitle,
   } = props 
@@ -62,7 +63,7 @@ const Layout = (props) => {
         />
         {children}
       </div>
-      <Footer />
+      <SiteFooter text={siteFooterText} />
     </div>
   )
 }
