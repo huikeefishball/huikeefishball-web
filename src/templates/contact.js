@@ -20,7 +20,7 @@ const ContactPage = (props) => {
   return (
     <Layout {...restProps}>
       <section id="contact-us" className={`${style.contactUs} bg-a`}>
-        <h1 className="container h2 icon triangle">{restProps.pageTitle}</h1>
+        <h1 className="container mx-auto h2 icon triangle">{restProps.pageTitle}</h1>
         <div className="container container--mobile mx-auto">
           <h2 className="h1 text-theme-yellow">{contactUsTitle}</h2>
           <h3 className="h3">{contactUsSubtitle}</h3>
