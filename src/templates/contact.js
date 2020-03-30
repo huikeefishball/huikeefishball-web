@@ -24,7 +24,7 @@ const ContactPage = (props) => {
         <div className="container container--mobile mx-auto">
           <h2 className="h1 text-theme-yellow">{contactUsTitle}</h2>
           <h3 className="h3">{contactUsSubtitle}</h3>
-          <ul className="icon-list">
+          <ul className={`${style.iconList} icon-list`}>
             <li className="icon map">{contactUsAddress}</li>
             <li className="icon phone">{contactUsPhone}</li>
             <li className="icon mail"><a href={`mailto:${contactUsEmail}`}>{contactUsEmail}</a></li>
@@ -35,7 +35,7 @@ const ContactPage = (props) => {
         <div className="container container--mobile mx-auto">
           <h2 className="h1 text-theme-yellow">{joinUsTitle}</h2>
           <h3>{joinUsSubtitle}</h3>
-          <ul className="icon-list">
+          <ul className={`${style.iconList} icon-list`}>
             <li className="icon phone">{joinUsPhone}</li>
             <li className="icon mail"><a href={`mailto:${joinUsEmail}`}>{joinUsEmail}</a></li>
           </ul>
