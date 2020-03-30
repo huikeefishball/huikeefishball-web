@@ -1,5 +1,7 @@
 import React from "react"
 
+import style from "./contact.module.styl"
+
 import Layout from "../components/layout"
 
 const ContactPage = (props) => {
@@ -17,23 +19,27 @@ const ContactPage = (props) => {
   } = props.pageContext
   return (
     <Layout {...restProps}>
-      <section>
-        <h1>{restProps.pageTitle}</h1>
-        <h2>{contactUsTitle}</h2>
-        <h3>{contactUsSubtitle}</h3>
-        <ul>
-          <li><address>{contactUsAddress}</address></li>
-          <li><span>{contactUsPhone}</span></li>
-          <li><a href={`mailto:${contactUsEmail}`}>{contactUsEmail}</a></li>
-        </ul>
+      <section id="contact-us" className={`${style.contactUs} bg-a`}>
+        <h1 className="container h2 icon triangle">{restProps.pageTitle}</h1>
+        <div className="container container--mobile mx-auto">
+          <h2 className="h1 text-theme-yellow">{contactUsTitle}</h2>
+          <h3 className="h3">{contactUsSubtitle}</h3>
+          <ul className="icon-list">
+            <li className="icon map">{contactUsAddress}</li>
+            <li className="icon phone">{contactUsPhone}</li>
+            <li className="icon mail"><a href={`mailto:${contactUsEmail}`}>{contactUsEmail}</a></li>
+          </ul>
+        </div>
       </section>
-      <section>
-        <h2>{joinUsTitle}</h2>
-        <h3>{joinUsSubtitle}</h3>
-        <ul>
-          <li><span>{joinUsPhone}</span></li>
-          <li><a href={`mailto:${joinUsEmail}`}>{joinUsEmail}</a></li>
-        </ul>
+      <section id="join-us" className={`${style.joinUs} bg-c`}>
+        <div className="container container--mobile mx-auto">
+          <h2 className="h1 text-theme-yellow">{joinUsTitle}</h2>
+          <h3>{joinUsSubtitle}</h3>
+          <ul className="icon-list">
+            <li className="icon phone">{joinUsPhone}</li>
+            <li className="icon mail"><a href={`mailto:${joinUsEmail}`}>{joinUsEmail}</a></li>
+          </ul>
+        </div>
       </section>
     </Layout>
   )

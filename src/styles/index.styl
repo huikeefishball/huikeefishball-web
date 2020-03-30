@@ -5,12 +5,29 @@ html
   font-size 18px
   color theme-black
 
+  a
+    &
+    &:visited
+      color currentColor
+
+  @media screen and (max-width screen-mobile)
+    font-size 16px
+
+h1
+h2
+h3
+  margin-top 0
+  margin-bottom @margin-top
+
 .container
   box-sizing border-box
   max-width 1220px
   padding-left 15px
   padding-right @padding-left
   width 100%
+
+  &&--mobile
+    max-width: screen-mobile
 
 .list-reset
   margin-top 0
@@ -21,3 +38,89 @@ html
 .mx-auto
   margin-left auto
   margin-right auto
+
+.h1
+  padding-top 10px
+  padding-bottom @padding-top
+  font-size 1.78rem
+  font-weight bold
+
+.h2
+  padding-top 8px
+  padding-bottom @padding-top
+  font-size 1.67rem
+  font-weight bold
+
+  &.icon.triangle
+    @media screen and (max-width screen-mobile)
+      text-align center
+
+.h3
+  padding-top 6px
+  padding-bottom @padding-top
+  font-size 1.33rem
+  font-weight bold
+
+.icon
+  &::before
+    content ''
+
+    display inline-block
+    flex-shrink 0
+
+    width 24px
+    height @width
+
+    background-size contain
+    background-repeat no-repeat
+    background-position center
+  
+    .triangle&
+      width 0.75em
+      height @width
+      margin-right 36px
+      background-image url(../assets/title-triangle.svg)
+
+      @media screen and (max-width screen-mobile)
+        margin-right 15px
+
+    .phone&
+      background-image url(../assets/icons/phone.svg)
+
+    .map&
+      background-image url(../assets/icons/map.svg)
+
+    .mail&
+      background-image url(../assets/icons/mail.svg)
+
+.text-theme-yellow
+  color theme-yellow
+
+ul.icon-list
+  @extends .list-reset
+
+  li
+    &:not(:first-child)
+      margin-top 20px
+
+      @media screen and (max-width screen-mobile)
+        margin-top 10px
+    
+    display: flex
+
+    &::before
+      margin-right 20px
+  
+
+.bg
+  &-a
+    background-size cover
+    background-image url('../assets/bg/a.jpg')
+    background-position center
+
+  &-c
+    background-position-x right
+    background-position-y bottom
+    background-repeat no-repeat
+    background-size contain
+    background-image url('../assets/bg/c.svg')
