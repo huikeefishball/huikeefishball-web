@@ -20,6 +20,17 @@ const ShopsPage = (props) => {
   } = props.pageContext
 
   const [defaultLng, defaultLat] = shops[0].location.coordinates
+  const mapProps = {
+    defaultCenter: {
+      lat: defaultLat,
+      lng: defaultLng,
+    },
+    defaultZoom: 12,
+    options: { styles: mapStyles },
+  }
+  if (googleMapsAPIKey) {
+    mapProps.bootstrapURLKeys = { key: googleMapsAPIKey }
+  }
 
   return (
     <Layout {...restProps}>
@@ -42,15 +53,7 @@ const ShopsPage = (props) => {
       </section>
       <section id="map">
         <div className={`${style.map} container mx-auto`}>
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: googleMapsAPIKey }}
-            defaultCenter={{
-              lat: defaultLat,
-              lng: defaultLng,
-            }}
-            defaultZoom={12}
-            options={{ styles: mapStyles }}
-          >
+          <GoogleMapReact {...mapProps}>
             {shops.map(shop => {
               const [lng, lat] = shop.location.coordinates
               return (
