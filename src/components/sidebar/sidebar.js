@@ -1,4 +1,4 @@
-import React, { useCallback } from "react"
+import React from "react"
 import classnames from "classnames"
 
 import style from "./sidebar.module.styl"
@@ -7,18 +7,18 @@ import FbIcon from  "../../assets/sidebar/fb.svg"
 import MailIcon from  "../../assets/sidebar/mail.svg"
 import TopIcon from  "../../assets/sidebar/top.svg"
 
+const onPressGoToTop = () => {
+  document.querySelector("body").scrollIntoView({ 
+    behavior: "smooth" 
+  })
+}
+
 export const Sidebar = (props) => {
   const {
     facebookLink,
     email,
     isShowGoToTop = false,
   } = props
-
-  const onPressGoToTop = useCallback(() => {
-    document.querySelector("body").scrollIntoView({ 
-      behavior: "smooth" 
-    })
-  })
 
   return (
     <div
@@ -28,18 +28,19 @@ export const Sidebar = (props) => {
       <ul className="list-reset">
         <li className={style.sidebarItem}>
           <a href={facebookLink} target="_blank" rel="noopener noreferrer">
-            <img src={FbIcon} />
+            <img src={FbIcon} alt={facebookLink} />
           </a>
         </li>
         <li className={style.sidebarItem}>
           <a href={`mailto:${email}`}>
-            <img src={MailIcon} />
+            <img src={MailIcon} alt={email} />
           </a>
         </li>
         {!!isShowGoToTop &&
           <li className={`${style.sidebarItem} ${style.gotoTop}`}>
             <button onClick={onPressGoToTop}>
-              <img src={TopIcon} />
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
+              <img src={TopIcon} role="presentation" />
             </button>
           </li>
         }

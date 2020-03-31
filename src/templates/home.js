@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { Helmet } from "react-helmet"
 import Swiper from "swiper"
 
@@ -25,9 +25,9 @@ const HomePage = (props) => {
     teamQuoteAuthor,
     ...restProps
   } = props.pageContext
-  let swiper
+  const swiperRef = useRef()
   useEffect(() => {
-    swiper = new Swiper(`.${style.swiper}`, {
+    swiperRef.current = new Swiper(`.${style.swiper}`, {
       loop: true,
       pagination: {
         el: `.${style.swiperPagination}`,

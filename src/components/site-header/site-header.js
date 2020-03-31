@@ -32,6 +32,7 @@ export const SiteHeader = (props) => {
   return (
     <header>
       <Helmet>
+        {/* eslint-disable-next-line jsx-a11y/html-has-lang */}
         <html is-modal-open={isModalOpen} />
       </Helmet>
       <div className={style.banner}>
@@ -67,7 +68,7 @@ export const SiteHeader = (props) => {
           <SiteFooter text={siteFooterText} />
         </div>
         <img className={style.logo} src={logo} alt={siteTitle} />
-        <div 
+        <button 
           className={classnames(style.hamburger, { [style.hamburgerPressed]: isModalOpen })}
           onClick={onPressHamburger}
         >
@@ -76,7 +77,7 @@ export const SiteHeader = (props) => {
             <span /> 
             <span /> 
           </div>
-        </div>
+        </button>
       </div>
       <div className={classnames(style.nav)}>
         <div className="container mx-auto">
