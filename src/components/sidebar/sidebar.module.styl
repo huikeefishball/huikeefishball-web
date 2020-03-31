@@ -1,0 +1,43 @@
+@import "../../styles/variables"
+
+.sidebar
+  ul
+    li:not(:first-child)
+      margin-top 12px
+
+  &-item
+    > *
+      box-sizing border-box
+
+      display block
+      background #333
+      border none
+
+      width 60px
+      height @width
+      padding 15px
+
+      border-radius 50%
+
+      cursor pointer
+
+      @media screen and (max-width screen-mobile)
+        width 40px
+        height @width
+        padding 10px
+
+      &:hover
+        background lighten(@background, 10)
+
+      > img
+        display block
+        width 100%
+        height @width
+        object-fit contain
+        object-position 50% 50%
+
+    &.goto-top > *
+      background theme-yellow
+
+      &:hover
+        background darken(theme-yellow, 10)

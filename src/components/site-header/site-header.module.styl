@@ -10,14 +10,14 @@
   background-position center
   background-repeat repeat-x
 
-  img
+  .logo
     width 220px
 
   @media screen and (max-width screen-mobile)
     padding 10px
     justify-content space-between
 
-    img
+    .logo
       width 132px
 
 .nav
@@ -122,8 +122,12 @@
       flex-direction column
       align-items center
 
+      @media screen and (max-height 575px)
+        padding 0
+
       li
-        padding 8px
+        @media screen and (min-height 576px)
+          padding 8px
 
         a
           display block
@@ -131,12 +135,17 @@
           text-decoration none !important
 
           font-size 2rem
+
+          @media screen and (max-height 575px)
+            padding 4px
   
   .language-switcher
-    margin-top 24px
     text-align center
+    
+    @media screen and (min-height 576px)
+      margin-top 24px
 
-    a
+    li > *
       font-size 1rem
 
   &--opened
@@ -200,3 +209,5 @@
       &:last-child
         width: 22px
 
+html[is-modal-open=true]
+  overflow hidden

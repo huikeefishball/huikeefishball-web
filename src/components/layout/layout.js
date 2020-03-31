@@ -1,17 +1,14 @@
-import React, { useCallback, useState } from "react"
+import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import style from "./layout.module.styl"
 
+import { Sidebar } from "../sidebar"
 import { SiteHeader, SiteHeaderMin } from "../site-header"
 import { SiteFooter } from "../site-footer"
 
 import "../../styles/index.styl"
-
-import FbIcon from  "../../assets/sidebar/fb.svg"
-import MailIcon from  "../../assets/sidebar/mail.svg"
-import TopIcon from  "../../assets/sidebar/top.svg"
 
 const importFontStyle = (language) => {
   let fontFamily = ""
@@ -52,12 +49,6 @@ export const Layout = (props) => {
     pageHelperFacebookLink,
     pageHelperEmail,
   } = props
-
-  const onPressGoToTop = useCallback(() => {
-    document.querySelector("body").scrollIntoView({ 
-      behavior: "smooth" 
-    });
-  })
 
   const [sidebarStyle, setSidebarStyle] = useState({
     opacity: 0,
@@ -101,6 +92,9 @@ export const Layout = (props) => {
           pagePath={pagePath}
           siteMenu={siteMenu}
           siteTitle={siteTitle}
+          siteFooterText={siteFooterText}
+          pageHelperFacebookLink={pageHelperFacebookLink}
+          pageHelperEmail={pageHelperEmail}
         />
         <SiteHeaderMin
           language={language}
@@ -109,25 +103,13 @@ export const Layout = (props) => {
           siteTitle={siteTitle}
           style={siteMenuMinStyle}
         />
-        <div className={style.sidebar} style={sidebarStyle}>
-          <ul className="list-reset">
-            <li className={style.sidebarItem}>
-              <a href={pageHelperFacebookLink} target="_blank" rel="noopener noreferrer">
-                <img src={FbIcon} />
-              </a>
-            </li>
-            <li className={style.sidebarItem}>
-              <a href={`mailto:${pageHelperEmail}`}>
-                <img src={MailIcon} />
-              </a>
-            </li>
-            <li className={style.sidebarItem}>
-              <button onClick={onPressGoToTop}>
-                <img src={TopIcon} />
-              </button>
-            </li>
-          </ul>
-        </div>
+        <Sidebar
+          className={style.sidebar}
+          facebookLink={pageHelperFacebookLink}
+          email={pageHelperEmail}
+          isShowGoToTop
+          style={sidebarStyle}
+        />
         {children}
       </div>
       <SiteFooter text={siteFooterText} />
