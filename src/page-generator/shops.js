@@ -19,7 +19,7 @@ module.exports = async (params) => {
         otherRetailsStoresButtonLink,
         shops: list_items.map((shop) => ({
           name: shop.name[language],
-          address: shop.name[language],
+          address: shop.address[language],
           phone: shop.phone,
           openingHours: shop.opening_hours,
           location: JSON.parse(shop.location),
