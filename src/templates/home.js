@@ -7,6 +7,8 @@ import style from "./home.module.styl"
 import { Quote } from "../components/quote"
 import { Layout } from "../components/layout"
 
+import logo from "../assets/logo.svg"
+
 const HomePage = (props) => {
   const {
     slides,
@@ -43,6 +45,9 @@ const HomePage = (props) => {
       </Helmet>
       <section id="slideshow">
         <div className={style.swiper}>
+          <div className={style.hero}>
+            <img className={style.logo} src={logo} alt={restProps.siteTitle} />
+          </div>
           <div className="swiper-wrapper">
             <div className="swiper-slide dummy" />
             {slides.map(({ image: slide }) => (
