@@ -19,7 +19,6 @@ padding = 40px
     &-wrapper
       position relative
       width 100%
-      padding-top 67.22%
       overflow hidden
 
       ^[1]
@@ -30,7 +29,7 @@ padding = 40px
         right 0
         bottom 0
 
-  @media screen and (min-width 1190px)
+  @media screen and (min-width (screen-desktop + 1px))
     .image-wrapper
       padding-top 67.22%
 
@@ -60,7 +59,7 @@ padding = 40px
       padding 8px 20px
       border 1px solid currentColor
 
-  @media screen and (max-width 1189px)
+  @media screen and (max-width screen-desktop)
     .image-wrapper
       padding-top 100%
 
