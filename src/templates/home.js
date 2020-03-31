@@ -47,7 +47,11 @@ const HomePage = (props) => {
           ))}
         </div>
       </section>
-      <section id="video" />
+      <section id="video" className={style.video}>
+        <video loop={true} muted={true} autoPlay={true}>
+          <source src="/images/uploads/home.mp4" type="video/mp4" />
+        </video>
+      </section>
       <section id="certification" className={style.certification}>
         <div className="container mx-auto">
           <div>
