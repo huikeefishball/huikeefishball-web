@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { Helmet } from "react-helmet"
+import Swiper from "swiper"
 
 import style from "./home.module.styl"
 
@@ -23,17 +25,38 @@ const HomePage = (props) => {
     teamQuoteAuthor,
     ...restProps
   } = props.pageContext
+  let swiper
+  useEffect(() => {
+    swiper = new Swiper(`.${style.swiper}`, {
+      loop: true,
+      pagination: {
+        el: `.${style.swiperPagination}`,
+        bulletClass: `${style.swiperPaginationBullet}`,
+        bulletActiveClass: `${style.swiperPaginationBulletActive}`
+      },
+    })
+  })
   return (
     <Layout {...restProps}>
+      <Helmet>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+      </Helmet>
       <section id="slideshow">
-        {slides.map(({ image: slide }) => (
-          <img
-            key={slide}
-            src={slide}
-            alt={restProps.pageTitle}
-            role="presentation"
-          />
-        ))}
+        <div className={style.swiper}>
+          <div className="swiper-wrapper">
+            <div className="swiper-slide dummy" />
+            {slides.map(({ image: slide }) => (
+              <img
+                key={slide}
+                className="swiper-slide"
+                src={slide}
+                alt={restProps.pageTitle}
+                role="presentation"
+              />
+            ))}
+          </div>
+          <div className={style.swiperPagination} />
+        </div>
       </section>
       <section id="about" className={style.about}>
         <div className="container mx-auto">
