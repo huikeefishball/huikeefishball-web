@@ -1,0 +1,55 @@
+@import "../styles/variables"
+
+.about
+  > div
+    padding-top 80px
+    padding-bottom @padding-top
+
+    @media screen and (max-width screen-mobile)
+      padding-top (@padding-top / 2)
+      padding-bottom @padding-top
+
+    max-width 782px
+
+    h2
+      padding-top (@padding-top / 2)
+
+.certification
+  > div
+    padding-bottom 40px
+    padding-top (@padding-bottom * 2)
+
+    @media screen and (min-width (screen-mobile + 1px))
+      display flex
+      align-items center
+
+      > *
+        flex 1
+
+        &:first-child
+          margin-right 60px
+    
+    @media screen and (max-width screen-mobile)
+      padding-top @padding-bottom
+      text-align center
+
+      ul
+        margin-bottom @padding-bottom
+
+  ul
+    font-weight bold
+
+.team
+  > div
+    padding-bottom 80px
+
+    @media screen and (max-width screen-mobile)
+      padding-bottom (@padding-bottom / 2)
+
+    max-width 580px
+
+    > div
+      padding-top (@padding-bottom / 2)
+
+      @media screen and (max-width screen-mobile)
+        border-top 1px solid #D9D9D9

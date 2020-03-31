@@ -68,6 +68,10 @@ h3
     @media screen and (max-width screen-mobile)
       text-align center
 
+    &.offset
+      @media screen and (min-width (screen-mobile + 1px))
+        transform translateX(-60px)
+
 .h2
   padding-top 8px
   padding-bottom @padding-top
@@ -79,6 +83,10 @@ h3
   padding-bottom @padding-top
   font-size 1.33rem
   font-weight bold
+
+.indent
+  @media screen and (min-width (screen-mobile + 1px))
+    margin-left calc(1.3em + 36px)
 
 .icon
   &::before

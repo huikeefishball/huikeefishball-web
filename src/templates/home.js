@@ -1,5 +1,8 @@
 import React from "react"
 
+import style from "./home.module.styl"
+
+import { Quote } from "../components/quote"
 import { Layout } from "../components/layout"
 
 const HomePage = (props) => {
@@ -32,46 +35,46 @@ const HomePage = (props) => {
           />
         ))}
       </section>
-      <section id="about">
+      <section id="about" className={style.about}>
         <div className="container mx-auto">
-          <div>
-            <p className="h3 text-theme-yellow">{aboutUsQuoteContent}</p>
-            <div>{aboutUsQuoteAuthor}</div>
-          </div>
-          <h2 className="h2 icon triangle">{aboutUsTitle}</h2>
+          <Quote
+            text={aboutUsQuoteContent}
+            author={aboutUsQuoteAuthor}
+          />
+          <h2 className="h1 icon triangle offset">{aboutUsTitle}</h2>
           {aboutUsContent.split('\n').map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
       </section>
       <section id="video" />
-      <section id="certification">
+      <section id="certification" className={style.certification}>
         <div className="container mx-auto">
           <div>
-            <h2 className="h2 icon triangle">{certificationTitle}</h2>
-            <p>{certificationContent}</p>
-            <ul>
+            <h2 className="h1 icon triangle">{certificationTitle}</h2>
+            <p className="indent">{certificationContent}</p>
+            <ul className="list-reset indent">
               {certifications.split('\n').map((cert, i) => (
                 <li key={i}>{cert}</li>
               ))}
             </ul>
           </div>
-          <div>
-            <p className="h3 text-theme-yellow">{certificationQuoteContent}</p>
-            <div>{certificationQuoteAuthor}</div>
-          </div>
+          <Quote
+            text={certificationQuoteContent}
+            author={certificationQuoteAuthor}
+          />
         </div>
       </section>
-      <section id="team">
+      <section id="team" className={style.team}>
         <div className="container mx-auto">
           <div>
-            <h2 className="h2 icon triangle">{teamTitle}</h2>
-            <p>{teamContent}</p>
+            <h2 className="h1 icon triangle">{teamTitle}</h2>
+            <p className="indent">{teamContent}</p>
           </div>
-          <div>
-            <p className="h3 text-theme-yellow">{teamQuoteContent}</p>
-            <div>{teamQuoteAuthor}</div>
-          </div>
+          <Quote
+            text={teamQuoteContent}
+            author={teamQuoteAuthor}
+          />
         </div>
       </section>
     </Layout>
