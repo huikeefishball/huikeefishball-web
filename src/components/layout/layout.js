@@ -4,7 +4,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import style from "./layout.module.styl"
 
-import { SiteHeader } from "../site-header"
+import { SiteHeader, SiteHeaderMin } from "../site-header"
 import { SiteFooter } from "../site-footer"
 
 import "../../styles/index.styl"
@@ -64,11 +64,21 @@ export const Layout = (props) => {
     pointerEvents: "none",
   })
 
+  const [siteMenuMinStyle, setSiteMenuMinStyle] = useState({
+    opacity: 0,
+    pointerEvents: "none",
+  })
+
   useScrollPosition(({ currPos }) => {
-      const showShow = currPos.y < -window.innerHeight
+      const shouldShowSidebar = currPos.y < -window.innerHeight
       setSidebarStyle({
-        opacity: showShow ? 1 : 0,
-        pointerEvents: showShow ? "all" : "none",
+        opacity: shouldShowSidebar ? 1 : 0,
+        pointerEvents: shouldShowSidebar ? "all" : "none",
+      })
+      const shouldShowMinMenu = currPos.y < -250
+      setSiteMenuMinStyle({
+        transform: `translateY(${shouldShowMinMenu ? 0 : "-100%"})`,
+        pointerEvents: shouldShowMinMenu ? "all" : "none",
       })
     },
     [sidebarStyle]
@@ -91,6 +101,13 @@ export const Layout = (props) => {
           pagePath={pagePath}
           siteMenu={siteMenu}
           siteTitle={siteTitle}
+        />
+        <SiteHeaderMin
+          language={language}
+          pagePath={pagePath}
+          siteMenu={siteMenu}
+          siteTitle={siteTitle}
+          style={siteMenuMinStyle}
         />
         <div className={style.sidebar} style={sidebarStyle}>
           <ul className="list-reset">

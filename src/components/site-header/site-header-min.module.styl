@@ -1,0 +1,60 @@
+@import "../../styles/variables"
+
+.root
+  position fixed
+  top 0
+  left 0
+  right 0
+  z-index 300
+
+  background white
+
+  padding-top 12px
+  padding-bottom @padding-top
+
+  border-bottom 4px solid theme-yellow
+
+  transition transform 0.5s ease
+
+  @media screen and (max-width screen-mobile)
+    display none
+
+  > div
+    display flex
+    justify-content space-between
+    align-items center
+
+.logo
+  max-height 76px
+
+  @media screen and (max-width screen-tablet)
+    max-height 48px
+
+.menu
+  ul
+    display flex
+
+    li
+      padding-left 6px
+      padding-right @padding-left
+
+      a
+        box-sizing border-box
+        &.active
+          color theme-yellow
+        &:not(.active)
+          border: none
+
+          &:hover
+            color theme-yellow
+
+        @media screen and (max-width screen-desktop)
+          min-width 10vw
+
+.language-switcher
+  li
+    a
+      color theme-yellow
+
+      &:hover
+        color darken(theme-yellow, 10)
