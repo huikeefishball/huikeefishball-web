@@ -1,5 +1,6 @@
-import React, { useCallback } from "react"
+import React, { useCallback, useState } from "react"
 import { Helmet } from "react-helmet"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import style from "./layout.module.styl"
 
@@ -57,6 +58,21 @@ export const Layout = (props) => {
       behavior: "smooth" 
     });
   })
+
+  const [sidebarStyle, setSidebarStyle] = useState({
+    opacity: 0,
+    pointerEvents: "none",
+  })
+
+  useScrollPosition(({ currPos }) => {
+      const showShow = currPos.y < -window.innerHeight
+      setSidebarStyle({
+        opacity: showShow ? 1 : 0,
+        pointerEvents: showShow ? "all" : "none",
+      })
+    },
+    [sidebarStyle]
+  )
   
   return (
     <div className={style.root}>
@@ -76,7 +92,7 @@ export const Layout = (props) => {
           siteMenu={siteMenu}
           siteTitle={siteTitle}
         />
-        <div className={style.sidebar}>
+        <div className={style.sidebar} style={sidebarStyle}>
           <ul className="list-reset">
             <li className={style.sidebarItem}>
               <a href={pageHelperFacebookLink} target="_blank" rel="noopener noreferrer">
