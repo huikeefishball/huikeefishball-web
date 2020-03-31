@@ -13,6 +13,10 @@ async function createLocalizedPage({ gatsby, commonData, pageData }, getCustomiz
       site_title: { [language]: siteTitle },
       site_menu,
       site_footer_text: { [language]: siteFooterText },
+      page_helper: {
+        facebook: pageHelperFacebookLink,
+        email: pageHelperEmail,
+      },
     } = commonData
     const siteMenu = localizeMenu(language, site_menu)
     const {
@@ -33,6 +37,8 @@ async function createLocalizedPage({ gatsby, commonData, pageData }, getCustomiz
         pageID,
         pagePath,
         pageTitle,
+        pageHelperFacebookLink,
+        pageHelperEmail,
         ...customizedParams.context
       },
     })

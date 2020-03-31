@@ -95,7 +95,7 @@ collections:
               - label: "繁體中文"
                 name: "tc"
                 widget: string
-          - label: "網頁頁尾文字 Stie Footer Text"
+          - label: "網頁頁尾文字 Site Footer Text"
             name: site_footer_text
             widget: object
             fields:
@@ -107,6 +107,16 @@ collections:
                 widget: string
               - label: "繁體中文"
                 name: "tc"
+                widget: string
+          - label: "頁面助手 Page Helper"
+            name: page_helper
+            widget: object
+            fields:
+              - label: "Facebook"
+                name: facebook
+                widget: string
+              - label: "電郵 Email"
+                name: email
                 widget: string
       - label: "首面 Home Page"
         name: "home_page"

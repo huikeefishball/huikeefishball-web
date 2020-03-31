@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback } from "react"
 import { Helmet } from "react-helmet"
 
 import style from "./layout.module.styl"
@@ -7,6 +7,10 @@ import { SiteHeader } from "../site-header"
 import { SiteFooter } from "../site-footer"
 
 import "../../styles/index.styl"
+
+import FbIcon from  "../../assets/sidebar/fb.svg"
+import MailIcon from  "../../assets/sidebar/mail.svg"
+import TopIcon from  "../../assets/sidebar/top.svg"
 
 const importFontStyle = (language) => {
   let fontFamily = ""
@@ -44,7 +48,16 @@ export const Layout = (props) => {
     siteFooterText,
     pagePath,
     pageTitle,
-  } = props 
+    pageHelperFacebookLink,
+    pageHelperEmail,
+  } = props
+
+  const onPressGoToTop = useCallback(() => {
+    document.querySelector("body").scrollIntoView({ 
+      behavior: "smooth" 
+    });
+  })
+  
   return (
     <div className={style.root}>
       <Helmet defer={false} defaultTitle={siteTitle} titleTemplate={`%s | ${siteTitle}`}>
@@ -56,13 +69,32 @@ export const Layout = (props) => {
         />
       </Helmet>
       {importFontStyle(language)}
-      <div>
+      <div className={style.content}>
         <SiteHeader
           language={language}
           pagePath={pagePath}
           siteMenu={siteMenu}
           siteTitle={siteTitle}
         />
+        <div className={style.sidebar}>
+          <ul className="list-reset">
+            <li className={style.sidebarItem}>
+              <a href={pageHelperFacebookLink} target="_blank" rel="noopener noreferrer">
+                <img src={FbIcon} />
+              </a>
+            </li>
+            <li className={style.sidebarItem}>
+              <a href={`mailto:${pageHelperEmail}`}>
+                <img src={MailIcon} />
+              </a>
+            </li>
+            <li className={style.sidebarItem}>
+              <button onClick={onPressGoToTop}>
+                <img src={TopIcon} />
+              </button>
+            </li>
+          </ul>
+        </div>
         {children}
       </div>
       <SiteFooter text={siteFooterText} />
