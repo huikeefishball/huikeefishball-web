@@ -36,7 +36,7 @@ export const SiteHeader = (props) => {
         <html is-modal-open={isModalOpen} />
       </Helmet>
       <div className={style.banner}>
-        <div className={classnames(style.headerModal, { [style.headerModalOpened]: isModalOpen })}>
+        <div className={classnames(style.headerModal, "bg-c", { [style.headerModalOpened]: isModalOpen })}>
           <header>
             <Sidebar
               facebookLink={pageHelperFacebookLink}
