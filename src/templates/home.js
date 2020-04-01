@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useCallback, useState } from "react"
 import { Helmet } from "react-helmet"
+import YouTube from "react-youtube"
+import classnames from "classnames"
 import Swiper from "swiper"
 
 import style from "./home.module.styl"
@@ -47,6 +49,52 @@ const HomePage = (props) => {
       },
     })
   })
+  const opts = {
+    // https://developers.google.com/youtube/player_parameters
+    playerVars: {
+      autoplay: 1,
+      loop: 1,
+      muted: 1,
+      controls: 0,
+    },
+  }
+
+  const youtubeRef = useRef()
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false)
+  const [isVideoMuted, setIsVideoMuted] = useState(true)
+
+  const onYouTubeReady = useCallback(async (event) => {
+    const yt = event.target
+    yt.mute()
+    yt.setLoop(true)
+    const isStopped = await yt.getPlayerState() !== 1
+    setIsPlayingVideo(isStopped)
+    if (isStopped) {
+      yt.playVideo()
+    }
+  }, [isPlayingVideo])
+
+  const onYouTubeStateChange = useCallback((event) => {
+    setIsPlayingVideo(event.data === 1)
+  }, [isPlayingVideo])
+
+  const onPressPlayButton = () => {
+    youtubeRef.current.internalPlayer.playVideo()
+  }
+
+  const onPressVolumeButton = async () => {
+    const player = youtubeRef.current.internalPlayer
+    const isMuted = await player.isMuted()
+    if (isMuted) {
+      player.unMute()
+    } else {
+      player.mute()
+    }
+    if (isVideoMuted !== isMuted) {
+      setIsVideoMuted(isMuted)
+    }
+  }
+
   return (
     <Layout {...restProps}>
       <Helmet>
@@ -88,10 +136,35 @@ const HomePage = (props) => {
           ))}
         </div>
       </section>
-      <section id="video" className={style.video}>
-        <video loop={true} muted={true} autoPlay={true}>
-          <source src="/images/uploads/home.mp4" type="video/mp4" />
-        </video>
+      <section
+        id="video"
+        className={classnames(style.video, { [style.videoActive]: isPlayingVideo })}
+        style={{ backgroundColor: "black"}}
+      >
+        <YouTube
+          ref={youtubeRef}
+          videoId="IjVrtuSWYhs"
+          opts={opts}
+          onReady={onYouTubeReady}
+          onStateChange={onYouTubeStateChange}
+        />
+        {!isPlayingVideo &&
+          <button
+            className={style.playButton}
+            onClick={onPressPlayButton}
+          />
+        }
+        <button
+          className={style.volumeButton}
+          onClick={onPressVolumeButton}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style={{ fillRule: "evenodd" }}>
+            <path d="M13,4.63,6.47,10.05H1.39A1.42,1.42,0,0,0,0,11.49V20.1a1.41,1.41,0,0,0,1.39,1.44H6.47L13,27a1.39,1.39,0,0,0,2.26-1.12V5.75A1.39,1.39,0,0,0,13,4.63ZM7,12.93a1.41,1.41,0,0,0,.87-.32l4.69-3.88V22.86L7.83,19A1.4,1.4,0,0,0,7,18.67H2.78V12.93Z" />
+            {!isVideoMuted &&
+              <path d="M21.28,19.09l3.19-3.29-3.19-3.29a1.45,1.45,0,0,1,0-2,1.34,1.34,0,0,1,2,0l3.19,3.29,3.19-3.29a1.35,1.35,0,0,1,2,0,1.45,1.45,0,0,1,0,2L28.4,15.8l3.19,3.29a1.46,1.46,0,0,1,0,2,1.37,1.37,0,0,1-2,0l-3.19-3.29-3.19,3.29a1.35,1.35,0,0,1-2,0A1.46,1.46,0,0,1,21.28,19.09Z" />
+            }
+          </svg>
+        </button>
       </section>
       <section id="certification" className={style.certification}>
         <DecorCertificationRight />
