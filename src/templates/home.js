@@ -113,11 +113,11 @@ const HomePage = (props) => {
             <img className={style.logo} src={logo} alt={restProps.siteTitle} />
           </div>
           <Swiper {...swiperParams}>
-            <div className="swiper-slide dummy" />
+            <div className={`${style.swiperSlide} swiper-slide dummy`} />
             {slides.map(({ image: slide }) => (
               <div
                 key={slide}
-                className="swiper-slide"
+                className={`${style.swiperSlide} swiper-slide`}
               >
                 <img
                   src={slide}
