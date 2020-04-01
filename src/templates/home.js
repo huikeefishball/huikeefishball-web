@@ -4,7 +4,15 @@ import Swiper from "swiper"
 
 import style from "./home.module.styl"
 
-import { DecorHeroLeft, DecorHeroRight } from "../components/decor"
+import {
+  DecorHeroLeft,
+  DecorHeroRight,
+  DecorAboutLeft,
+  DecorAboutRight,
+  DecorCertificationRight,
+  DecorTeamLeft,
+  DecorTeamRight,
+} from "../components/decor"
 import { Quote } from "../components/quote"
 import { Layout } from "../components/layout"
 
@@ -67,6 +75,8 @@ const HomePage = (props) => {
         </div>
       </section>
       <section id="about" className={style.about}>
+        <DecorAboutLeft />
+        <DecorAboutRight />
         <div className="container mx-auto">
           <Quote
             text={aboutUsQuoteContent}
@@ -84,6 +94,7 @@ const HomePage = (props) => {
         </video>
       </section>
       <section id="certification" className={style.certification}>
+        <DecorCertificationRight />
         <div className="container mx-auto">
           <div>
             <h2 className="h1 icon triangle">{certificationTitle}</h2>
@@ -101,6 +112,8 @@ const HomePage = (props) => {
         </div>
       </section>
       <section id="team" className={style.team}>
+        <DecorTeamLeft />
+        <DecorTeamRight />
         <div className="container mx-auto">
           <div>
             <h2 className="h1 icon triangle">{teamTitle}</h2>
