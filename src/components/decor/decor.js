@@ -46,7 +46,7 @@ export const DecorHeroLeft = () => {
         <div className={`${style.circle} ${style.flipY}`} />
       </foreignObject>
       <foreignObject x="300.42" y={611.52 + fish1Offset}  width="162.99" height="158.99">
-        <div className={style.fish1} />
+        <div className={`${style.fish1} no-desktop`} />
       </foreignObject>
     </svg>
   )
@@ -91,7 +91,7 @@ export const DecorHeroRight = () => {
         <div className={style.triangle} />
       </foreignObject>
       <foreignObject x="308.86" y={410.07 + circle1Offset} width="126.45" height="126.27">
-        <div className={style.circle} />
+        <div className={`${style.circle} no-desktop`} />
       </foreignObject>
     </svg>
   )
@@ -113,7 +113,7 @@ export const DecorAboutLeft = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.left}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 865" width="300">
+    <svg className={`${style.root} ${style.left} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 865" width="300">
       <foreignObject x="51" y={637 + triangle1Offset} width="125" height="115">
         <div className={style.triangle} />
       </foreignObject>
@@ -140,7 +140,7 @@ export const DecorAboutRight = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.right}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 865" width="300">
+    <svg className={`${style.root} ${style.right} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 865" width="300">
       <foreignObject x="86" y={173 + triangle1Offset} width="96" height="86">
         <div className={style.triangle} style={{ transform: "scaleY(-1)" }} />
       </foreignObject>
@@ -168,7 +168,7 @@ export const DecorCertificationRight = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.right}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 691 555" width="691">
+    <svg className={`${style.root} ${style.right} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 691 555" width="691">
       <foreignObject x="629" y={174 + triangle1Offset} width="101" height="86">
         <div className={style.triangle} />
       </foreignObject>
@@ -195,7 +195,7 @@ export const DecorTeamLeft = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.left}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 651" width="300">
+    <svg className={`${style.root} ${style.left} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 651" width="300">
       <foreignObject x="-50" y={300 + triangle1Offset} width="136" height="116">
         <div className={style.triangle} />
       </foreignObject>
@@ -222,7 +222,7 @@ export const DecorTeamRight = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.right}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371 652" width="371">
+    <svg className={`${style.root} ${style.right} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371 652" width="371">
       <foreignObject x="0" y={95 + triangle1Offset} width="136" height="116">
         <div className={style.triangle} style={{ transform: "scaleY(-1)" }} />
       </foreignObject>
