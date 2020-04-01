@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback, useState } from "react"
 import { Helmet } from "react-helmet"
 import YouTube from "react-youtube"
 import classnames from "classnames"
-import Swiper from "swiper"
+import Swiper from "react-id-swiper";
 
 import style from "./home.module.styl"
 
@@ -39,17 +39,20 @@ const HomePage = (props) => {
     videoYouTubeID,
     ...restProps
   } = props.pageContext
-  const swiperRef = useRef()
-  useEffect(() => {
-    swiperRef.current = new Swiper(`.${style.swiper}`, {
-      loop: true,
-      pagination: {
-        el: `.${style.swiperPagination}`,
-        bulletClass: `${style.swiperPaginationBullet}`,
-        bulletActiveClass: `${style.swiperPaginationBulletActive}`
-      },
-    })
-  })
+
+  const swiperParams = {
+    loop: true,
+    pagination: {
+      el: `.${style.swiperPagination}`,
+      bulletClass: `${style.swiperPaginationBullet}`,
+      bulletActiveClass: `${style.swiperPaginationBulletActive}`,
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+    },
+  }
+
   const opts = {
     // https://developers.google.com/youtube/player_parameters
     playerVars: {
@@ -108,19 +111,21 @@ const HomePage = (props) => {
             <DecorHeroRight />
             <img className={style.logo} src={logo} alt={restProps.siteTitle} />
           </div>
-          <div className="swiper-wrapper">
+          <Swiper {...swiperParams}>
             <div className="swiper-slide dummy" />
             {slides.map(({ image: slide }) => (
-              <img
+              <div
                 key={slide}
                 className="swiper-slide"
-                src={slide}
-                alt={restProps.pageTitle}
-                role="presentation"
-              />
+              >
+                <img
+                  src={slide}
+                  alt={restProps.pageTitle}
+                  role="presentation"
+                />
+              </div>
             ))}
-          </div>
-          <div className={style.swiperPagination} />
+          </Swiper>
         </div>
       </section>
       <section id="about" className={style.about}>
