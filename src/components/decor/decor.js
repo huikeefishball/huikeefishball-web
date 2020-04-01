@@ -232,3 +232,63 @@ export const DecorTeamRight = () => {
     </svg>
   )
 }
+
+export const DecorStyle1Left = () => {
+  const [triangleOffset, setTriangleOffset] = useState(0)
+  const [circleOffset, setCircleOffset] = useState(0)
+  useScrollPosition(({ currPos: { y } }) => {
+      requestAnimationFrame(() => {
+        setTriangleOffset(getOffset(y, -17))
+        setCircleOffset(getOffset(y, 20))  
+      })
+    },
+    [
+      triangleOffset,
+      circleOffset,
+    ]
+  )
+
+  return (
+    <svg className={`${style.root} ${style.left} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600" width="300">
+      <foreignObject x="-50" y={252 + circleOffset} width="96" height="96">
+        <div className={style.circle} style={{ transform: "scaleY(-1)" }} />
+      </foreignObject>
+      <foreignObject x="64" y={440 + triangleOffset} width="120" height="110">
+        <div className={style.triangle} style={{ transform: "scaleY(-1)" }} />
+      </foreignObject>
+    </svg>
+  )
+}
+
+export const DecorStyle1Right = () => {
+  const [triangleOffset, setTriangleOffset] = useState(0)
+  const [circleOffset, setCircleOffset] = useState(0)
+  const [fishOffset, setFishOffset] = useState(0)
+  useScrollPosition(({ currPos: { y } }) => {
+      requestAnimationFrame(() => {
+        setTriangleOffset(getOffset(y, 17))
+        setCircleOffset(getOffset(y, -24))  
+        setFishOffset(getOffset(y, 18))  
+      })
+    },
+    [
+      triangleOffset,
+      circleOffset,
+      fishOffset,
+    ]
+  )
+
+  return (
+    <svg className={`${style.root} ${style.right} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 600" width="264">
+      <foreignObject x="90" y={146 + circleOffset} width="72" height="72">
+        <div className={style.circle} />
+      </foreignObject>
+      <foreignObject x="0" y={88 + triangleOffset} width="72" height="66">
+        <div className={style.triangle} />
+      </foreignObject>
+      <foreignObject x="0" y={388 + fishOffset} width="145" height="145">
+        <div className={style.fish1} />
+      </foreignObject>
+    </svg>
+  )
+}

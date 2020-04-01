@@ -1,7 +1,8 @@
 import React from "react"
 
 import style from "./contact.module.styl"
-
+        
+import { DecorStyle1Left, DecorStyle1Right } from "../components/decor"
 import { Layout } from "../components/layout"
 
 const ContactPage = (props) => {
@@ -20,6 +21,8 @@ const ContactPage = (props) => {
   return (
     <Layout {...restProps}>
       <section id="contact-us" className={`${style.contactUs} bg-a`}>
+        <DecorStyle1Left />
+        <DecorStyle1Right />
         <h1 className="container mx-auto h1 icon triangle">{restProps.pageTitle}</h1>
         <div className="container container--mobile mx-auto">
           <h2 className="h1 text-theme-yellow">{contactUsTitle}</h2>

@@ -2,6 +2,7 @@ import React from "react"
 
 import style from "./products.module.styl"
 
+import { DecorStyle1Left, DecorStyle1Right } from "../components/decor"
 import { Layout } from "../components/layout"
 import { Quote } from "../components/quote"
 import { ProductListItem } from "../components/product-list-item"
@@ -17,6 +18,8 @@ const ProductsPage = (props) => {
   return (
     <Layout {...restProps}>
       <section id="intro" className={`${style.intro} bg-a`}>
+        <DecorStyle1Left />
+        <DecorStyle1Right />
         <div className="container mx-auto">
           <h1 className="h1 icon triangle">{restProps.pageTitle}</h1>
           <div className={`${style.introContent} mx-auto`}>
