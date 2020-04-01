@@ -35,7 +35,7 @@ const ShopsPage = (props) => {
 
   return (
     <Layout {...restProps}>
-      <section className={`${style.list} bg-c`}>
+      <section className={`${style.list} bg-c bg-mobile-clear`}>
         <DecorStyle2 className="no-wide" direction="left" />
         <DecorStyle2 className="no-wide" direction="right" />
         <div className="container mx-auto">
