@@ -4,6 +4,7 @@ import Swiper from "swiper"
 
 import style from "./home.module.styl"
 
+import { DecorHeroLeft, DecorHeroRight } from "../components/decor"
 import { Quote } from "../components/quote"
 import { Layout } from "../components/layout"
 
@@ -46,6 +47,8 @@ const HomePage = (props) => {
       <section id="slideshow">
         <div className={style.swiper}>
           <div className={style.hero}>
+            <DecorHeroLeft />
+            <DecorHeroRight />
             <img className={style.logo} src={logo} alt={restProps.siteTitle} />
           </div>
           <div className="swiper-wrapper">
