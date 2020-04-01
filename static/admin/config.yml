@@ -228,6 +228,9 @@ collections:
             name: video
             widget: object
             fields:
+              - label: "預覽圖 Cover Image"
+                name: cover_image
+                widget: image
               - label: "YouTube ID"
                 name: "youtube_id"
                 widget: string

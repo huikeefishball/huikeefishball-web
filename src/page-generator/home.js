@@ -13,6 +13,7 @@ module.exports = async (params) => {
         },
       },
       video: {
+        cover_image: videoCoverImage,
         youtube_id: videoYouTubeID,
       },
       certification: {
@@ -49,6 +50,7 @@ module.exports = async (params) => {
         teamContent,
         teamQuoteContent,
         teamQuoteAuthor,
+        videoCoverImage,
         videoYouTubeID,
       },
     }

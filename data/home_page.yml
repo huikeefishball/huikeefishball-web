@@ -74,6 +74,7 @@ about_us:
       ja: 'Alfred Hui, 行政總裁'
       tc: 'Alfred Hui, 行政總裁'
 video:
+  cover_image: /images/uploads/video-cover.jpg
   youtube_id: IjVrtuSWYhs
 certification:
   title:

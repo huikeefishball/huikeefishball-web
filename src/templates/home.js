@@ -36,6 +36,7 @@ const HomePage = (props) => {
     teamContent,
     teamQuoteContent,
     teamQuoteAuthor,
+    videoCoverImage,
     videoYouTubeID,
     ...restProps
   } = props.pageContext
@@ -146,7 +147,7 @@ const HomePage = (props) => {
       <section
         id="video"
         className={classnames(style.video, { [style.videoActive]: isPlayingVideo })}
-        style={{ backgroundColor: "black"}}
+        style={{ backgroundColor: "black" }}
       >
         <YouTube
           ref={youtubeRef}
@@ -156,10 +157,24 @@ const HomePage = (props) => {
           onStateChange={onYouTubeStateChange}
         />
         {!isPlayingVideo &&
-          <button
-            className={style.playButton}
-            onClick={onPressPlayButton}
-          />
+          <React.Fragment>
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                backgroundColor: "black",
+                backgroundImage: `url(${videoCoverImage})`,
+                backgroundSize: "cover",
+              }}
+            />
+            <button
+              className={style.playButton}
+              onClick={onPressPlayButton}
+            />
+          </React.Fragment>
         }
         <button
           className={style.volumeButton}
