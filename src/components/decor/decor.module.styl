@@ -9,8 +9,34 @@
   &.left
     left 0
 
+    &.hero
+      @media screen and (max-width screen-desktop)
+        left unset
+        right 60vw
+
+        @media (max-width screen-mobile)
+          right 15vw
+
+    &:not(.hero)
+      @media screen and (max-width screen-desktop)
+        left unset
+        right calc((100% - 1240px) / 2 + 1240px - 250px)
+
   &.right
     right 0
+
+    &.hero
+      @media screen and (max-width screen-desktop)
+        right unset
+        left 50vw
+
+        @media (max-width screen-mobile)
+          left 18vw
+
+    &:not(.hero)
+      @media screen and (max-width screen-desktop)
+        right unset
+        left calc((100% - 1240px) / 2 + 1240px - 250px)
 
   foreignObject > div
     width 100%

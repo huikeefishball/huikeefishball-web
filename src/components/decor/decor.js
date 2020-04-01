@@ -5,7 +5,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import style from "./decor.module.styl"
 
 function getOffset(y, dampingValue) {
-  return y / dampingValue
+  return y % window.innerHeight / dampingValue / 1.2
 }
 
 export const DecorHeroLeft = () => {
@@ -33,7 +33,7 @@ export const DecorHeroLeft = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.left}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463.4 800" width="463.4">
+    <svg className={`${style.root} ${style.left} ${style.hero}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463.4 800" width="463.4">
       <foreignObject x="112.6" y={99.61 + triangle1Offset} width="109.96" height="96.26">
         <div className={`${style.triangle} ${style.flipY}`} />
       </foreignObject>
@@ -78,7 +78,7 @@ export const DecorHeroRight = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.right}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503.65 800" width="503.65">
+    <svg className={`${style.root} ${style.right} ${style.hero}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503.65 800" width="503.65">
       <foreignObject x="286.85" y={57.7 + fish1Offset} width="79.45" height="150.22">
         <div className={style.fish3} />
       </foreignObject>
@@ -92,7 +92,7 @@ export const DecorHeroRight = () => {
         <div className={style.triangle} />
       </foreignObject>
       <foreignObject x="308.86" y={410.07 + circle1Offset} width="126.45" height="126.27">
-        <div className={`${style.circle} no-desktop`} />
+        <div className={style.circle} />
       </foreignObject>
     </svg>
   )
@@ -173,7 +173,7 @@ export const DecorCertificationRight = () => {
       <foreignObject x="629" y={174 + triangle1Offset} width="101" height="86">
         <div className={style.triangle} />
       </foreignObject>
-      <foreignObject x="0" y={550 + fish1Offset} width="172" height="79">
+      <foreignObject x="0" y={420 + fish1Offset} width="172" height="79">
         <div className={style.fish2} />
       </foreignObject>
     </svg>
@@ -197,7 +197,7 @@ export const DecorTeamLeft = () => {
 
   return (
     <svg className={`${style.root} ${style.left} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 651" width="300">
-      <foreignObject x="-50" y={300 + triangle1Offset} width="136" height="116">
+      <foreignObject x="0" y={300 + triangle1Offset} width="136" height="116">
         <div className={style.triangle} />
       </foreignObject>
       <foreignObject x="150" y={213 + fish1Offset} width="96" height="96">
