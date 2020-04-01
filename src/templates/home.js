@@ -69,8 +69,9 @@ const HomePage = (props) => {
 
   const onYouTubeReady = useCallback(async (event) => {
     const yt = event.target
-    yt.mute()
-    yt.setLoop(true)
+    await yt.mute()
+    const isMuted = await yt.isMuted()
+    setIsVideoMuted(isMuted)
     const isStopped = await yt.getPlayerState() !== 1
     setIsPlayingVideo(isStopped)
     if (isStopped) {
