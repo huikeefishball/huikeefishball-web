@@ -36,6 +36,7 @@ const HomePage = (props) => {
     teamContent,
     teamQuoteContent,
     teamQuoteAuthor,
+    videoYouTubeID,
     ...restProps
   } = props.pageContext
   const swiperRef = useRef()
@@ -143,7 +144,7 @@ const HomePage = (props) => {
       >
         <YouTube
           ref={youtubeRef}
-          videoId="IjVrtuSWYhs"
+          videoId={videoYouTubeID}
           opts={opts}
           onReady={onYouTubeReady}
           onStateChange={onYouTubeStateChange}

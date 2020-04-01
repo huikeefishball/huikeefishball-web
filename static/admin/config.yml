@@ -224,6 +224,13 @@ collections:
                       - label: "繁體中文"
                         name: "tc"
                         widget: string
+          - label: "影片 Video"
+            name: video
+            widget: object
+            fields:
+              - label: "YouTube ID"
+                name: "youtube_id"
+                widget: string
           - label: "認證部分 Certification Section"
             name: "certification"
             widget: "object"

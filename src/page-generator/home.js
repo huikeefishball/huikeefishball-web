@@ -12,6 +12,9 @@ module.exports = async (params) => {
           author: { [language]: aboutUsQuoteAuthor },
         },
       },
+      video: {
+        youtube_id: videoYouTubeID,
+      },
       certification: {
         title: { [language]: certificationTitle },
         content: { [language]: certificationContent },
@@ -46,6 +49,7 @@ module.exports = async (params) => {
         teamContent,
         teamQuoteContent,
         teamQuoteAuthor,
+        videoYouTubeID,
       },
     }
   })
