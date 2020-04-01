@@ -2,7 +2,7 @@ import React from "react"
 
 import style from "./contact.module.styl"
         
-import { DecorStyle1Left, DecorStyle1Right } from "../components/decor"
+import { DecorStyle1Left, DecorStyle1Right, DecorStyle2 } from "../components/decor"
 import { Layout } from "../components/layout"
 
 const ContactPage = (props) => {
@@ -35,6 +35,8 @@ const ContactPage = (props) => {
         </div>
       </section>
       <section id="join-us" className={`${style.joinUs} bg-c`}>
+        <DecorStyle2 direction="left" />
+        <DecorStyle2 direction="right" />
         <div className="container container--mobile mx-auto">
           <h2 className="h1 text-theme-yellow">{joinUsTitle}</h2>
           <h3>{joinUsSubtitle}</h3>

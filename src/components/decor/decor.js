@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import classnames from "classnames"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import style from "./decor.module.styl"
@@ -211,7 +212,7 @@ export const DecorTeamRight = () => {
   const [fish1Offset, setFish1Offset] = useState(0)
   useScrollPosition(({ currPos: { y } }) => {
       requestAnimationFrame(() => {
-        setTriangle1Offset(getOffset(y, 22))
+        setTriangle1Offset(getOffset(y, 27))
         setFish1Offset(getOffset(y, -17))  
       })
     },
@@ -288,6 +289,32 @@ export const DecorStyle1Right = () => {
       </foreignObject>
       <foreignObject x="0" y={388 + fishOffset} width="145" height="145">
         <div className={style.fish1} />
+      </foreignObject>
+    </svg>
+  )
+}
+
+export const DecorStyle2 = ({ direction = "left", ...props }) => {
+  const isLeft = direction === "left" 
+  const [fishOffset, setFishOffset] = useState(0)
+  useScrollPosition(({ currPos: { y } }) => {
+      requestAnimationFrame(() => {
+        setFishOffset(getOffset(y, isLeft ? -10 : 8))  
+      })
+    },
+    [fishOffset]
+  )
+
+  const x = isLeft ? 24 : 0
+  const y = isLeft ? 134 : 386
+  const size = isLeft ? 96 : 142
+  const fishStyle = isLeft ? {} : { transform: "scaleX(-1)" }
+
+  const className = classnames(style.root, style[direction], "no-tablet", props.className)
+  return (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 600" width="236">
+      <foreignObject x={x} y={y + fishOffset} width={size} height={size}>
+        <div className={style.fish1} style={fishStyle} />
       </foreignObject>
     </svg>
   )

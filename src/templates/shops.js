@@ -4,6 +4,7 @@ import GoogleMapReact from 'google-map-react';
 import style from "./shops.module.styl"
 import mapStyles from "./shops.map.styles.json"
 
+import { DecorStyle2 } from "../components/decor"
 import { Layout } from "../components/layout"
 import mapPin from "../assets/map-pin.png"
 
@@ -35,6 +36,8 @@ const ShopsPage = (props) => {
   return (
     <Layout {...restProps}>
       <section className={`${style.list} bg-c`}>
+        <DecorStyle2 className="no-wide" direction="left" />
+        <DecorStyle2 className="no-wide" direction="right" />
         <div className="container mx-auto">
           <h2 className="h1 icon triangle">{restProps.pageTitle}</h2>
           <ul className="list-reset">
