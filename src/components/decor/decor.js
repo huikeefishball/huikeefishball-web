@@ -114,7 +114,7 @@ export const DecorAboutLeft = () => {
   )
 
   return (
-    <svg className={`${style.root} ${style.left} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 865" width="300">
+    <svg className={`${style.root} ${style.left} no-tablet`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 865" width="350">
       <foreignObject x="51" y={637 + triangle1Offset} width="125" height="115">
         <div className={style.triangle} />
       </foreignObject>
