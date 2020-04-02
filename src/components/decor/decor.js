@@ -173,7 +173,7 @@ export const DecorCertificationRight = () => {
       <foreignObject x="629" y={174 + triangle1Offset} width="101" height="86">
         <div className={style.triangle} />
       </foreignObject>
-      <foreignObject x="0" y={420 + fish1Offset} width="172" height="79">
+      <foreignObject x="0" y={480 + fish1Offset} width="172" height="79">
         <div className={style.fish2} />
       </foreignObject>
     </svg>
