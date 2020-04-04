@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useState } from "react"
+import React, { useRef, useState } from "react"
 import { Helmet } from "react-helmet"
 import YouTube from "react-youtube"
 import classnames from "classnames"
@@ -68,27 +68,21 @@ const HomePage = props => {
   const [isPlayingVideo, setIsPlayingVideo] = useState(false)
   const [isVideoMuted, setIsVideoMuted] = useState(true)
 
-  const onYouTubeReady = useCallback(
-    async event => {
-      const yt = event.target
-      await yt.mute()
-      const isMuted = await yt.isMuted()
-      setIsVideoMuted(isMuted)
-      const isStopped = (await yt.getPlayerState()) !== 1
-      setIsPlayingVideo(isStopped)
-      if (isStopped) {
-        yt.playVideo()
-      }
-    },
-    [isPlayingVideo]
-  )
+  const onYouTubeReady = async event => {
+    const yt = event.target
+    await yt.mute()
+    const isMuted = await yt.isMuted()
+    setIsVideoMuted(isMuted)
+    const isStopped = (await yt.getPlayerState()) !== 1
+    setIsPlayingVideo(isStopped)
+    if (isStopped) {
+      yt.playVideo()
+    }
+  }
 
-  const onYouTubeStateChange = useCallback(
-    event => {
-      setIsPlayingVideo(event.data === 1)
-    },
-    [isPlayingVideo]
-  )
+  const onYouTubeStateChange = event => {
+    setIsPlayingVideo(event.data === 1)
+  }
 
   const onPressPlayButton = () => {
     youtubeRef.current.internalPlayer.playVideo()
