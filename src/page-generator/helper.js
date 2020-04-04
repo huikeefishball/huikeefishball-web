@@ -1,22 +1,19 @@
 const path = require(`path`)
 
-const { languages } = require('../locales')
-const {
-  localizeURL,
-  localizeMenu,
-} = require('../utils/localization')
+const { languages } = require("../locales")
+const { localizeURL, localizeMenu } = require("../utils/localization")
 
-async function createLocalizedPage({ gatsby, commonData, pageData }, getCustomizedParams) {
+async function createLocalizedPage(
+  { gatsby, commonData, pageData },
+  getCustomizedParams
+) {
   const pagePath = pageData.path
   languages.forEach(async ({ code: language }) => {
     const {
       site_title: { [language]: siteTitle },
       site_menu,
       site_footer_text: { [language]: siteFooterText },
-      page_helper: {
-        facebook: pageHelperFacebookLink,
-        email: pageHelperEmail,
-      },
+      page_helper: { facebook: pageHelperFacebookLink, email: pageHelperEmail },
     } = commonData
     const siteMenu = localizeMenu(language, site_menu)
     const {
@@ -39,7 +36,7 @@ async function createLocalizedPage({ gatsby, commonData, pageData }, getCustomiz
         pageTitle,
         pageHelperFacebookLink,
         pageHelperEmail,
-        ...customizedParams.context
+        ...customizedParams.context,
       },
     })
   })

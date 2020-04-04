@@ -10,7 +10,7 @@ import { SiteFooter } from "../site-footer"
 
 import "../../styles/index.styl"
 
-const importFontStyle = (language) => {
+const importFontStyle = language => {
   let fontFamily = ""
   let subset = ""
   switch (language) {
@@ -21,23 +21,28 @@ const importFontStyle = (language) => {
     case "tc":
       fontFamily = "Noto+Sans+TC"
       subset = "chinese-traditional"
-      break;
+      break
     default:
       fontFamily = "Noto+Sans"
-      break;
+      break
   }
   return (
     <Helmet defer={false}>
       <link
         rel="stylesheet"
-        href={`https://fonts.googleapis.com/css?family=${fontFamily}:300,400,700&display=swap${subset ? `subset=${subset}` : ''}`}
+        href={`https://fonts.googleapis.com/css?family=${fontFamily}:300,400,700&display=swap${
+          subset ? `subset=${subset}` : ""
+        }`}
       />
-      <style type="text/css">{`html{font-family: '${fontFamily.replace(/\+/g, ' ')}', sans-serif;}`}</style>
+      <style type="text/css">{`html{font-family: '${fontFamily.replace(
+        /\+/g,
+        " "
+      )}', sans-serif;}`}</style>
     </Helmet>
   )
 }
 
-export const Layout = (props) => {
+export const Layout = props => {
   const {
     children,
     language,
@@ -60,7 +65,8 @@ export const Layout = (props) => {
     pointerEvents: "none",
   })
 
-  useScrollPosition(({ currPos }) => {
+  useScrollPosition(
+    ({ currPos }) => {
       const shouldShowSidebar = currPos.y < -window.innerHeight
       setSidebarStyle({
         opacity: shouldShowSidebar ? 1 : 0,
@@ -74,12 +80,16 @@ export const Layout = (props) => {
     },
     [sidebarStyle]
   )
-  
+
   return (
     <div className={style.root}>
-      <Helmet defer={false} defaultTitle={siteTitle} titleTemplate={`%s | ${siteTitle}`}>
+      <Helmet
+        defer={false}
+        defaultTitle={siteTitle}
+        titleTemplate={`%s | ${siteTitle}`}
+      >
         <html lang={language} />
-          <title>{pageTitle}</title>
+        <title>{pageTitle}</title>
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"

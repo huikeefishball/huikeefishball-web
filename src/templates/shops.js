@@ -1,5 +1,5 @@
 import React from "react"
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from "google-map-react"
 
 import style from "./shops.module.styl"
 import mapStyles from "./shops.map.styles.json"
@@ -8,8 +8,7 @@ import { DecorStyle2 } from "../components/decor"
 import { Layout } from "../components/layout"
 import mapPin from "../assets/map-pin.png"
 
-
-const ShopsPage = (props) => {
+const ShopsPage = props => {
   const {
     shops,
     otherRetailsStoresTitle,
@@ -88,7 +87,9 @@ const ShopsPage = (props) => {
               alt={otherRetailsStoresButtonText}
               target="_blank"
               rel="noopener noreferrer"
-            >{otherRetailsStoresButtonText}</a>
+            >
+              {otherRetailsStoresButtonText}
+            </a>
           </div>
         </div>
       </section>

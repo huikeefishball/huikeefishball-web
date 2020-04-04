@@ -3,22 +3,18 @@ import classnames from "classnames"
 
 import style from "./sidebar.module.styl"
 
-import FbIcon from  "../../assets/sidebar/fb.svg"
-import MailIcon from  "../../assets/sidebar/mail.svg"
-import TopIcon from  "../../assets/sidebar/top.svg"
+import FbIcon from "../../assets/sidebar/fb.svg"
+import MailIcon from "../../assets/sidebar/mail.svg"
+import TopIcon from "../../assets/sidebar/top.svg"
 
 const onPressGoToTop = () => {
-  document.querySelector("body").scrollIntoView({ 
-    behavior: "smooth" 
+  document.querySelector("body").scrollIntoView({
+    behavior: "smooth",
   })
 }
 
-export const Sidebar = (props) => {
-  const {
-    facebookLink,
-    email,
-    isShowGoToTop = false,
-  } = props
+export const Sidebar = props => {
+  const { facebookLink, email, isShowGoToTop = false } = props
 
   return (
     <div
@@ -36,14 +32,14 @@ export const Sidebar = (props) => {
             <img src={MailIcon} alt={email} />
           </a>
         </li>
-        {!!isShowGoToTop &&
+        {!!isShowGoToTop && (
           <li className={`${style.sidebarItem} ${style.gotoTop}`}>
             <button onClick={onPressGoToTop}>
               {/* eslint-disable-next-line jsx-a11y/alt-text */}
               <img src={TopIcon} role="presentation" />
             </button>
           </li>
-        }
+        )}
       </ul>
     </div>
   )

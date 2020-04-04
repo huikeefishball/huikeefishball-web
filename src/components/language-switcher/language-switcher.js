@@ -8,11 +8,8 @@ import { localizeURL } from "../../utils/localization"
 
 import { languages } from "../../locales"
 
-export const LanguageSwitcher = (props) => {
-  const {
-    language: currentLanguage,
-    pagePath,
-  } = props
+export const LanguageSwitcher = props => {
+  const { language: currentLanguage, pagePath } = props
   return (
     <nav
       className={classnames(style.root, props.className)}

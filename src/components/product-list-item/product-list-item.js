@@ -3,20 +3,11 @@ import classnames from "classnames"
 
 import style from "./product-list-item.module.styl"
 
-export const ProductListItem = (props) => {
-  const {
-    title,
-    description,
-    descriptionPosition,
-    bgImage,
-    bgTitle,
-  } = props
-  const introClassName = classnames(
-    style.intro,
-    {
-      [style.introRight]: descriptionPosition === "right",
-    }
-  )
+export const ProductListItem = props => {
+  const { title, description, descriptionPosition, bgImage, bgTitle } = props
+  const introClassName = classnames(style.intro, {
+    [style.introRight]: descriptionPosition === "right",
+  })
   return (
     <li className={style.root}>
       <div className={style.imageWrapper}>

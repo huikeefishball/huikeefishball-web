@@ -1,7 +1,7 @@
 const { createLocalizedPage } = require("./helper")
 
-module.exports = async (params) => {
-  await createLocalizedPage(params, (language) => {
+module.exports = async params => {
+  await createLocalizedPage(params, language => {
     const {
       slides,
       about_us: {
@@ -12,10 +12,7 @@ module.exports = async (params) => {
           author: { [language]: aboutUsQuoteAuthor },
         },
       },
-      video: {
-        cover_image: videoCoverImage,
-        youtube_id: videoYouTubeID,
-      },
+      video: { cover_image: videoCoverImage, youtube_id: videoYouTubeID },
       certification: {
         title: { [language]: certificationTitle },
         content: { [language]: certificationContent },

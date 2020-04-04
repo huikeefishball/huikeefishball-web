@@ -7,8 +7,8 @@ title:
 description:
   en: >-
     Made with whole cut meat, no added preservatives, bouncy, juicy and chewy.
-  ja: '只用原肉材料製造，無防腐劑，原汁原味，多汁又彈牙。'
-  tc: '只用原肉材料製造，無防腐劑，原汁原味，多汁又彈牙。'
+  ja: "只用原肉材料製造，無防腐劑，原汁原味，多汁又彈牙。"
+  tc: "只用原肉材料製造，無防腐劑，原汁原味，多汁又彈牙。"
 description_position: left
 bg_image: /images/uploads/tuned_huikee008_re.jpg
 bg_title:

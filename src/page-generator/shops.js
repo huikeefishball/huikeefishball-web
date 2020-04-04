@@ -1,7 +1,7 @@
 const { createLocalizedPage } = require("./helper")
 
-module.exports = async (params) => {
-  await createLocalizedPage(params, (language) => {
+module.exports = async params => {
+  await createLocalizedPage(params, language => {
     const {
       other_retails_stores: {
         title: { [language]: otherRetailsStoresTitle },
@@ -17,7 +17,7 @@ module.exports = async (params) => {
         otherRetailsStoresDescription,
         otherRetailsStoresButtonText,
         otherRetailsStoresButtonLink,
-        shops: list_items.map((shop) => ({
+        shops: list_items.map(shop => ({
           name: shop.name[language],
           address: shop.address[language],
           phone: shop.phone,

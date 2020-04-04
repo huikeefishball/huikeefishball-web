@@ -1,6 +1,6 @@
 const { createLocalizedPage } = require("./helper")
 
-module.exports = async (params) => {
+module.exports = async params => {
   const { list_items } = params.pageData
   const productIdsList = list_items.map(({ id }) => id)
   const result = await params.gatsby.graphql(`
@@ -33,7 +33,7 @@ module.exports = async (params) => {
       }
     }
   `)
-  await createLocalizedPage(params, (language) => {
+  await createLocalizedPage(params, language => {
     const {
       description: { [language]: pageDesciption },
       quote: {

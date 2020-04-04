@@ -5,7 +5,7 @@ const localizeMenu = (language, menu) => {
 }
 
 const localizeURL = (language, url) => {
-  return `/${language}${url}`.replace(`/${defaultLanguageKey}`, '')
+  return `/${language}${url}`.replace(`/${defaultLanguageKey}`, "")
 }
 
 module.exports = {

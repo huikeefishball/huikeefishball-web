@@ -7,7 +7,7 @@ import { Layout } from "../components/layout"
 import { Quote } from "../components/quote"
 import { ProductListItem } from "../components/product-list-item"
 
-const ProductsPage = (props) => {
+const ProductsPage = props => {
   const {
     pageDesciption,
     quoteAuthor,
@@ -23,10 +23,7 @@ const ProductsPage = (props) => {
         <div className="container mx-auto">
           <h1 className="h1 icon triangle">{restProps.pageTitle}</h1>
           <div className={`${style.introContent} mx-auto`}>
-            <Quote
-              text={quoteContent}
-              author={quoteAuthor}
-            />
+            <Quote text={quoteContent} author={quoteAuthor} />
             <p className={style.description}>{pageDesciption}</p>
           </div>
         </div>
@@ -35,10 +32,7 @@ const ProductsPage = (props) => {
         <div className={`${style.list} container mx-auto`}>
           <ul className="list-reset">
             {products.map(product => (
-              <ProductListItem
-                key={product.id}
-                {...product}
-              />
+              <ProductListItem key={product.id} {...product} />
             ))}
           </ul>
         </div>

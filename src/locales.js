@@ -1,5 +1,5 @@
 module.exports = {
-  defaultLanguageKey: 'tc',
+  defaultLanguageKey: "tc",
   languages: [
     {
       code: "en",
@@ -7,7 +7,7 @@ module.exports = {
     },
     {
       code: "tc",
-      name: "中文"
+      name: "中文",
     },
     {
       code: "ja",

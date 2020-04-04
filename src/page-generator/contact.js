@@ -1,8 +1,7 @@
-
 const { createLocalizedPage } = require("./helper")
 
-module.exports = async (params) => {
-  await createLocalizedPage(params, (language) => {
+module.exports = async params => {
+  await createLocalizedPage(params, language => {
     const {
       contact_us: {
         title: { [language]: contactUsTitle },

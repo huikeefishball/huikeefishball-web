@@ -12,7 +12,7 @@ import { SiteFooter } from "../site-footer"
 import { localizeURL } from "../../utils/localization"
 import logo from "../../assets/logo.svg"
 
-export const SiteHeader = (props) => {
+export const SiteHeader = props => {
   const {
     language,
     siteMenu,
@@ -36,7 +36,11 @@ export const SiteHeader = (props) => {
         <html is-modal-open={isModalOpen} />
       </Helmet>
       <div className={style.banner}>
-        <div className={classnames(style.headerModal, "bg-c", { [style.headerModalOpened]: isModalOpen })}>
+        <div
+          className={classnames(style.headerModal, "bg-c", {
+            [style.headerModalOpened]: isModalOpen,
+          })}
+        >
           <header>
             <Sidebar
               facebookLink={pageHelperFacebookLink}
@@ -49,12 +53,16 @@ export const SiteHeader = (props) => {
                 {siteMenu.map(({ key, title, path }) => (
                   <li
                     key={key}
-                    className={classnames({ [style.active]: path === pagePath })}
+                    className={classnames({
+                      [style.active]: path === pagePath,
+                    })}
                   >
                     <Link
                       to={localizeURL(language, path)}
                       onClick={onPressHamburger}
-                    >{title}</Link>
+                    >
+                      {title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -68,14 +76,16 @@ export const SiteHeader = (props) => {
           <SiteFooter text={siteFooterText} />
         </div>
         <img className={style.logo} src={logo} alt={siteTitle} />
-        <button 
-          className={classnames(style.hamburger, { [style.hamburgerPressed]: isModalOpen })}
+        <button
+          className={classnames(style.hamburger, {
+            [style.hamburgerPressed]: isModalOpen,
+          })}
           onClick={onPressHamburger}
         >
           <div>
-            <span /> 
-            <span /> 
-            <span /> 
+            <span />
+            <span />
+            <span />
           </div>
         </button>
       </div>
