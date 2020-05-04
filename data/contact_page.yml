@@ -1,19 +1,19 @@
-path: "/contact"
+path: /contact
 menu_title:
   en: Contact
-  ja: 聯絡我們
+  ja: 接触
   tc: 聯絡我們
 title:
   en: our contact
-  ja: 聯絡我們
+  ja: 私たちの連絡先
   tc: 聯絡我們
 contact_us:
   title:
-    ja: 跟我們談談
+    ja: 話しましょう
     tc: 跟我們談談
     en: let’s talk
   subtitle:
-    ja: 如有任何批發或其他查詢，請隨時與我們聯繫
+    ja: すべての卸売りまたはその他については、お気軽にお問い合わせください
     tc: 如有任何批發或其他查詢，請隨時與我們聯繫
     en: Feel free to contact us for all wholesale or other
   address:
@@ -25,11 +25,11 @@ contact_us:
 join_us:
   title:
     en: Join us
-    ja: 加入我們
+    ja: 参加しませんか
     tc: 加入我們
   subtitle:
     en: 'We are hiring full time and part time, contact us for more information'
-    ja: 我們正在全職和兼職，請與我們聯繫以獲取更多信息
+    ja: 私たちはフルタイムとパートタイムを採用しています、詳細についてはお問い合わせください
     tc: 我們正在全職和兼職，請與我們聯繫以獲取更多信息
   phone: +852 2194 8612
   email: hr@fishball.com.hk
