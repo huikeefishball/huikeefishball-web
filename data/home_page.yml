@@ -1,10 +1,10 @@
-path: "/"
+path: /
 menu_title:
   en: Home
-  ja: 首頁
+  ja: Home
   tc: 首頁
 title:
-  ja: 首頁
+  ja: ホーム
   tc: 首頁
   en: Home
 slides:
@@ -37,16 +37,13 @@ about_us:
       to create the very best Hong Kong style fishballs and meatballs
       appreciated by all.
     ja: >-
-      我們的故事始源於五十年代，那些年，我們只是木頭車小販，推著小車穿梭於長沙灣街市售賣自家製的魚旦。 就是這樣，
-      我們慢慢從街頭搬入第一家店。1979年，長沙灣許記魚旦門市正式誕生。時至今日，我們仍然保留小工場生產手作產品，延續傳統。
+      私たちのストーリーは50年代に遡りますが、当時私たちは木の板で自家製の魚団子を載せて、長沙灣街の市街中を駆け回って販売していた。徐々に車販売から店舗に入りました。1979年に長沙灣許記魚旦が正式に誕生。今に至っても、私たちは依然と少量の手作り生産を伝統として守ってきた。
 
 
-      我們不斷學習研究關於魚旦的一切， 由採購原材料到最好的生產方法以至食物安全。經過多年的計劃和籌備，無數認真的測試，
-      我們的生產團隊終於在2017年12月正式遷入建於香港葵涌的自動化工場。
+      私たちは魚団子に関しての研究を続けていて、原材料の購買からベストな生産方法、そして食品安全まで。長年の計画と準備を経て、数えきれないほど真面目なテストを重ねて、私たちの生産チームはようやく2017年12月に、香港葵涌にある自動化工場に移しました。
 
 
-      一直以來，魚旦都被人認為是下價食品，賣不起價錢的魚就是做魚旦的材料，
-      這個觀念需要改變。我們用心搜羅高品質的原材料，探索新技術和口味，結合傳統與現代化生產，務求創造出大家最喜愛的港式魚旦和肉丸。
+      長年、魚団子は廉価商品、売れない魚は団子の材料となっている概念は、ここで変えるべき。私たちは心込めて高品質な原材料を探し、新しい技術と味を追求し続き、伝統と現代生産を融合し、皆さんが大好きな香港式魚団子と肉団子を追求してきた。
     tc: >-
       我們的故事始源於五十年代，那些年，我們只是木頭車小販，推著小車穿梭於長沙灣街市售賣自家製的魚旦。 就是這樣，
       我們慢慢從街頭搬入第一家店。1979年，長沙灣許記魚旦門市正式誕生。時至今日，我們仍然保留小工場生產手作產品，延續傳統。
@@ -60,25 +57,25 @@ about_us:
       這個觀念需要改變。我們用心搜羅高品質的原材料，探索新技術和口味，結合傳統與現代化生產，務求創造出大家最喜愛的港式魚旦和肉丸。
   title:
     en: about us
-    ja: 關於我們
+    ja: 私たちについて
     tc: 關於我們
   quote:
     content:
       en: >-
         “Be proud of what you do, your passion can lead you to amazing things.
         DREAM BIG”
-      ja: 「忠於自己的堅持，為自己所做的事情而自豪，你的熱誠可引領你做了不起的事。。。 勇於夢想」
+      ja: 自分の信念に忠実し、自分のやっていることをプライド持って、あなたの熱意はあなたの不可能を可能にする・・・夢を持つ勇気
       tc: 「忠於自己的堅持，為自己所做的事情而自豪，你的熱誠可引領你做了不起的事。。。 勇於夢想」
     author:
       en: 'Alfred Hui, CEO'
-      ja: 'Alfred Hui, 行政總裁'
+      ja: 'Alfred Hui, CEO'
       tc: 'Alfred Hui, 行政總裁'
 video:
   cover_image: /images/uploads/video-cover.jpg
   youtube_id: IjVrtuSWYhs
 certification:
   title:
-    ja: 我們的認證
+    ja: 私たちの認定
     tc: 我們的認證
     en: our certifications
   content:
@@ -86,7 +83,7 @@ certification:
       We have become Hong Kong’s first world class automated meatball
       manufacturing factory and first to be accredited with world recognized
       certifications.
-    ja: 我們成為全香港首間達到世界級水準及擁有國際認証的全自動丸類生產工場。
+    ja: 私たちは香港で初めて世界水準に達して、国際認証の全自動団子類生産工場となった。
     tc: 我們成為全香港首間達到世界級水準及擁有國際認証的全自動丸類生產工場。
   certifications: |-
     ISO22000:2005 
@@ -97,22 +94,23 @@ certification:
     MSC CoC
   quote:
     content:
-      ja: 「味道是重要但食物安全亦然，無論如何我們的工場都必需要做到國際標準」
+      ja: 味も重要だが、食品安全も重要、何しても私たちの工場は国際基準に達すべき。
       tc: 「味道是重要但食物安全亦然，無論如何我們的工場都必需要做到國際標準」
       en: >-
         “Taste is important but food safety is just as important, so no matter
         how hard it is our factory must meet international standards” 
     author:
-      ja: 'Martin Leung, 總經理'
+      ja: 'Martin Leung, General Manager'
       tc: 'Martin Leung, 總經理'
       en: 'Martin Leung, General Manager'
 team:
   title:
-    ja: 我們的團隊
+    ja: 私たちのチーム
     tc: 我們的團隊
     en: our team
   content:
-    ja: '我們的團體擁有相同的核心價值, 縱然大家的背景和經驗各異. 我們對自己的工作充滿熱誠, 無間斷挑戰自我, 努力做到最好。'
+    ja: >-
+      私たちチームは同じコア価値観を持ち、みんなの背景と経験が異なるが、私たちは自分の仕事に対して熱意をもち、止まらない自己挑戦、自己ベストになるよう努力。
     tc: '我們的團體擁有相同的核心價值, 縱然大家的背景和經驗各異. 我們對自己的工作充滿熱誠, 無間斷挑戰自我, 努力做到最好。'
     en: >-
       We are from different backgrounds with different experiences but our core
@@ -123,9 +121,10 @@ team:
       en: >-
         “We discuss, we argue, we find solutions… I love every moment, because I
         feel everyone is in this together and everyone is passionate” 
-      ja: 「我們會討論，會有爭論， 但一定會尋找共識和解決方案。。。每一刻都是我所享受的，讓我感到我們的團隊在並肩作戰，做好每件事」
+      ja: >-
+        私たちも時には討論、論争あるが、でも必ず共同認識と解決方法を探す。。。私はその毎秒を楽しんでいて、自分が自分のチームと友に肩並べて戦いし、すべてのことをちゃんとしていく。
       tc: 「我們會討論，會有爭論， 但一定會尋找共識和解決方案。。。每一刻都是我所享受的，讓我感到我們的團隊在並肩作戰，做好每件事」
     author:
-      ja: 'Niki Tang, 常務董事'
+      ja: 'Niki Tang, Managing Director'
       tc: 'Niki Tang, 常務董事'
       en: 'Niki Tang, Managing Director'
