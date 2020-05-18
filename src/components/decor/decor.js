@@ -156,7 +156,7 @@ export const DecorAboutLeft = () => {
     ({ currPos: { y } }) => {
       requestAnimationFrame(() => {
         setTriangle1Offset(getOffset(y, 17))
-        setFish1Offset(getOffset(y, -10))
+        setFish1Offset(getOffset(y, -8))
       })
     },
     [triangle1Offset, fish1Offset]
