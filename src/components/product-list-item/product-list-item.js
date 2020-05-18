@@ -18,11 +18,15 @@ export const ProductListItem = props => {
           role="presentation"
         />
       </div>
-      <div className={introClassName}>
-        <h2 className="h2 text-theme-yellow">{title}</h2>
-        <p>{description}</p>
+      <div className={style.contentWrapper}>
+        <div className={`${style.contentWrapperInner} container mx-auto`}>
+          <div className={introClassName}>
+            <h2 className="h2 text-theme-yellow">{title}</h2>
+            <p>{description}</p>
+          </div>
+          <span className={style.bgTitle}>{bgTitle}</span>
+        </div>
       </div>
-      <span className={style.bgTitle}>{bgTitle}</span>
     </li>
   )
 }

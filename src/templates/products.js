@@ -29,7 +29,7 @@ const ProductsPage = props => {
         </div>
       </section>
       <section id="items">
-        <div className={`${style.list} container mx-auto`}>
+        <div className={style.list}>
           <ul className="list-reset">
             {products.map(product => (
               <ProductListItem key={product.id} {...product} />
