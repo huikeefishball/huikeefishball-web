@@ -14,17 +14,25 @@
 .content
   position relative
 
-  > *:last-child
-    @media screen and (max-width (screen-desktop - 1px))
-      padding-bottom 204px
-
 .sidebar
-  position fixed
-  z-index 100
+  position absolute
   right 40px
-  bottom 70px
+  bottom 40px
 
   transition opacity 0.2s ease
 
+  @media screen and (max-width screen-tablet)
+    position relative
+
   @media screen and (max-width screen-mobile)
     right 20px
+    bottom 20px
+
+  &-wrapper
+    position -webkit-sticky
+    position sticky
+    z-index 100
+    bottom 0
+
+    display flex
+    justify-content flex-end

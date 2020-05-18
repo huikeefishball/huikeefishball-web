@@ -113,14 +113,16 @@ export const Layout = props => {
           siteTitle={siteTitle}
           style={siteMenuMinStyle}
         />
-        <Sidebar
-          className={style.sidebar}
-          facebookLink={pageHelperFacebookLink}
-          email={pageHelperEmail}
-          isShowGoToTop
-          style={sidebarStyle}
-        />
         {children}
+        <aside className={style.sidebarWrapper}>
+          <Sidebar
+            className={style.sidebar}
+            facebookLink={pageHelperFacebookLink}
+            email={pageHelperEmail}
+            isShowGoToTop
+            style={sidebarStyle}
+          />
+        </aside>
       </div>
       <SiteFooter text={siteFooterText} />
     </div>
