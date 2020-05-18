@@ -43,6 +43,7 @@ const HomePage = props => {
 
   const swiperParams = {
     loop: true,
+    speed: 1500,
     pagination: {
       el: `.${style.swiperPagination}`,
       bulletClass: `${style.swiperPaginationBullet}`,
@@ -50,7 +51,7 @@ const HomePage = props => {
       clickable: true,
     },
     autoplay: {
-      delay: 3000,
+      delay: 4000,
     },
   }
 
