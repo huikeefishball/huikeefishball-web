@@ -385,7 +385,7 @@ export const DecorStyle2 = ({ direction = "left", ...props }) => {
   const x = isLeft ? 24 : 0
   const y = isLeft ? 134 : 386
   const size = isLeft ? 96 : 142
-  const fishStyle = isLeft ? {} : { transform: "scaleX(-1)" }
+  const viewStyle = isLeft ? {} : { transform: "scaleX(-1)" }
 
   const className = classnames(
     style.root,
@@ -399,9 +399,10 @@ export const DecorStyle2 = ({ direction = "left", ...props }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 236 600"
       width="236"
+      style={viewStyle}
     >
       <foreignObject x={x} y={y + fishOffset} width={size} height={size}>
-        <div className={style.fish1} style={fishStyle} />
+        <div className={style.fish1} />
       </foreignObject>
     </svg>
   )
