@@ -11,7 +11,7 @@ list_items:
   - name:
       ja: 長沙灣1號店
       tc: 長沙灣1號店
-      en: Cheung Sha Wan
+      en: Cheung Sha Wan Shop 1
     address:
       en: 'G/F 16 Cheung Fat Street, Cheung Sha Wan '
       ja: 長沙灣長發街16號地下
@@ -20,12 +20,12 @@ list_items:
     phone: +852 2386 7049
     opening_hours: '8:30am - 7:30pm'
   - name:
-      en: Cheung Sha Wan
+      en: Cheung Sha Wan Shop 2
       ja: 長沙灣2號店
       tc: 長沙灣2號店
     address:
-      ja: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
-      tc: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
+      ja: 長沙灣順寧道455號秀怡閣地下2鋪
+      tc: 長沙灣順寧道455號秀怡閣地下2鋪
       en: 'Shop 2 Scenic Court 455 Shun Ning Road, Cheung Sha Wan'
     location: '{"type":"Point","coordinates":[114.1559889,22.3392966]}'
     phone: +852 3709 6220
@@ -35,8 +35,8 @@ list_items:
       ja: 北角店
       tc: 北角店
     address:
-      ja: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
-      tc: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
+      ja: 北角春秧街128號港逸軒地下A鋪
+      tc: 北角春秧街128號港逸軒地下A鋪
       en: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
     location: '{"type":"Point","coordinates":[114.198542,22.291358]}'
     phone: +852 2386 7689
@@ -46,8 +46,8 @@ list_items:
       ja: 西環店
       tc: 西環店
     address:
-      ja: 'G/F 5 Holland Street, Kennedy Town, Sai Wan'
-      tc: 'G/F 5 Holland Street, Kennedy Town, Sai Wan'
+      ja: 西環荷蘭街5號地下
+      tc: 西環荷蘭街5號地下
       en: 'G/F 5 Holland Street, Kennedy Town, Sai Wan'
     location: '{"type":"Point","coordinates":[114.1287164,22.2843192]}'
     phone: +852 2819 7908
