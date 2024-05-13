@@ -88,10 +88,10 @@ certification:
   certifications: |-
     ISO22000:2018
     ISO9001:2015
+    ISO14001:2015
     ISO45001:2018
-    OHSAS18001:2007 
     HACCP
-    MSC CoC
+    MSC COC
   quote:
     content:
       ja: 味も重要だが、食品安全も重要、何しても私たちの工場は国際基準に達すべき。
