@@ -31,17 +31,6 @@ list_items:
     phone: +852 3709 6220
     opening_hours: '9:30am - 7:30pm'
   - name:
-      en: North Point
-      ja: 北角店
-      tc: 北角店
-    address:
-      ja: 北角春秧街128號港逸軒地下A鋪
-      tc: 北角春秧街128號港逸軒地下A鋪
-      en: 'Shop A Glory Rise 128 Chun Yeung Street, North Point'
-    location: '{"type":"Point","coordinates":[114.198542,22.291358]}'
-    phone: +852 2386 7689
-    opening_hours: '9:00am - 7:00pm'
-  - name:
       en: West Point
       ja: 西環店
       tc: 西環店
